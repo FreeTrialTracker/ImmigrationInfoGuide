@@ -11,25 +11,11 @@ const webapps = [
     description: 'Visit VisaInfoGuide.com, your trusted companion for navigating the world\'s visa landscape. Whether you\'re planning a short holiday, relocating abroad, or pursuing international opportunities, we cut through the red tape so you don\'t have to. Get clear, up-to-date guidance on visa requirements, application processes, and entry rules for countries worldwide. Travel smarter. Move with confidence.',
   },
   {
-    category: 'Immigration & Travel',
-    name: 'HotelInAirport.com',
-    url: 'https://hotelinairport.com',
-    logo: '/HOTELINAIRPORT_LOGO.png',
-    description: 'Visit HotelInAirport.com, your go-to resource for finding hotels inside airports, connected to terminals, and near major airports around the world. Long layover, red-eye flight, missed connection, or early check-in, we make it easier to find the most convenient place to rest fast. Explore practical stay options, compare airport access, and plan smoother travel with confidence.',
-  },
-  {
-    category: 'Games & Brain Training',
-    name: 'WordRingPuzzle.com',
-    url: 'https://wordringpuzzle.com',
-    logo: '/WordRingPuzzle.com.png',
-    description: 'Visit WordRingPuzzle.com and challenge yourself with one of the most addictive word games around! Form words, crack rings, and race against the clock in puzzles designed to stretch your vocabulary and sharpen your mind. Whether you\'re a casual player looking for a quick brain boost or a word wizard chasing a perfect score, there\'s always a new challenge waiting for you. How far can your wordpower take you?',
-  },
-  {
-    category: 'Productivity & Tools',
-    name: 'OneToolFix.com',
-    url: 'https://onetoolfix.com',
-    logo: '/OneToolFix.com.png',
-    description: 'Visit OneToolFix.com, because every problem deserves the right tool and you shouldn\'t need ten apps to do one job. Discover a growing suite of smart, streamlined utilities designed to simplify your digital life. Convert, edit, calculate, and organise, all in one place, all with zero fuss. Stop switching tabs and start getting things done. One tool. One fix. Every time.',
+    category: 'Airport & Travel',
+    name: 'RestInAirport.com',
+    url: 'https://restinairport.com',
+    logo: '/RestInAirport.com.png.png',
+    description: 'RestInAirport.com is your go-to platform for finding the best way to rest during any airport layover, anywhere in the world. Long connections, overnight flights, and transit stops do not have to be exhausting or uncertain. Discover airside transit hotels, sleep pods, private suites, and lounges you can access without leaving the airport. Every listing is built to answer what actually matters: Can you stay without immigration, where is it located, and how do you get there. Clear information, no guesswork, real options, so you can rest smarter and travel better.',
   },
 ];
 
@@ -78,7 +64,7 @@ export default function WebAppSuite() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:text-brand-primary/80 transition-colors group"
                 >
-                  Visit {app.name}
+                  Visit {app.name === 'RestInAirport.com' ? 'Restinairport.com' : app.name}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </CardContent>

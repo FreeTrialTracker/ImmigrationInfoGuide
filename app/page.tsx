@@ -6,6 +6,7 @@ import FeatureColumns from '@/components/FeatureColumns';
 import SEOContentSection from '@/components/SEOContentSection';
 import WebAppSuite from '@/components/WebAppSuite';
 import BlogSection from '@/components/BlogSection';
+import BrandPushTrustBadge from '@/components/BrandPushTrustBadge';
 
 export const metadata = {
   title: 'ImmigrationInfoGuide.com - Work, Residency, Digital Nomad, and Long-Stay Pathways',
@@ -31,7 +32,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 text-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-0 text-center">
         <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">
           <span className="block sm:inline text-gray-900">Immigration</span>
           <span className="block sm:inline">
@@ -47,9 +48,13 @@ export default function Home() {
           <ImmigrationPathFinderCard />
         </div>
 
-        <p className="text-sm text-gray-500 mt-8 mb-16">
+        <p className="text-sm text-gray-500 mt-8 mb-8">
           Informational only. Verify with official government sources.
         </p>
+
+        <div className="mx-auto max-w-3xl mb-4">
+          <BrandPushTrustBadge />
+        </div>
       </div>
 
       <FeatureColumns />

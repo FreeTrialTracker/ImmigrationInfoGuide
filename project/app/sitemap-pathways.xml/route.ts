@@ -1,9 +1,0 @@
-import { getPathwayEntries, buildXML, xmlResponse } from '@/lib/seo/sitemapHelpers';
-
-export const revalidate = 86400;
-export const dynamic = 'force-static';
-
-export async function GET() {
-  const entries = await getPathwayEntries();
-  return xmlResponse(buildXML(entries));
-}
