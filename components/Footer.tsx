@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
+import { Mail, FileText, Plane } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -11,14 +11,23 @@ export default function Footer() {
               About ImmigrationInfoGuide
             </h3>
             <p className="text-sm text-gray-400 mb-6">
-              Independent immigration information database for international movers. Sister site to{' '}
+              Independent immigration information database for international movers. Part of a network of travel resources including{' '}
               <a
-                href="https://visainfoguide.com"
+                href="https://www.visainfoguide.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                                className="text-indigo-400 hover:text-indigo-300 transition-colors"
+                className="text-sky-400 hover:text-sky-300 transition-colors"
               >
                 VisaInfoGuide.com
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://www.restinairport.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 hover:text-sky-300 transition-colors"
+              >
+                RestInAirport.com
               </a>
               .
             </p>
@@ -26,7 +35,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   About Us
                 </Link>
@@ -34,7 +43,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/methodology"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Methodology
                 </Link>
@@ -42,7 +51,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/data-sources"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Data Sources
                 </Link>
@@ -56,7 +65,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/path-finder"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Immigration Path Finder
                 </Link>
@@ -64,7 +73,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/country-finder"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Compare Countries
                 </Link>
@@ -72,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/tools"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   All Tools
                 </Link>
@@ -86,7 +95,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/immigration-guides"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Immigration Guides
                 </Link>
@@ -94,7 +103,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resources"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Passport Rankings 2026
                 </Link>
@@ -102,7 +111,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resources"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   All Research
                 </Link>
@@ -116,27 +125,27 @@ export default function Footer() {
               <li>
                 <Link
                   href="/global-travel-resources"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Global Travel Resources
                 </Link>
               </li>
               <li>
                 <a
-                  href="https://visainfoguide.com"
+                  href="https://www.visainfoguide.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
-                  Visa Requirements
+                  Visa Entry Requirements
                 </a>
               </li>
               <li>
                 <a
-                  href="https://hotelinairport.com"
+                  href="https://www.restinairport.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Airport Transit Hotels
                 </a>
@@ -150,7 +159,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy-policy"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -158,7 +167,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms-of-use"
-                  className="text-sm text-gray-300 hover:text-indigo-400 transition-colors"
+                  className="text-sm text-gray-300 hover:text-sky-400 transition-colors"
                 >
                   Terms of Use
                 </Link>
@@ -172,13 +181,55 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="border-t border-gray-800 pt-8 mb-8">
+          <h3 className="text-sm font-semibold text-white mb-5">Travel Resource Network</h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <a
+              href="https://www.visainfoguide.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-sky-500/40 rounded-lg p-4 transition-all"
+            >
+              <div className="flex-shrink-0 w-8 h-8 bg-sky-500/10 rounded-md flex items-center justify-center mt-0.5">
+                <FileText className="w-4 h-4 text-sky-400" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">
+                  VisaInfoGuide.com
+                </p>
+                <p className="text-xs text-gray-400 mt-0.5 leading-relaxed">
+                  Tourist, student, and short-stay visa requirements for 190+ countries — before your immigration journey begins.
+                </p>
+              </div>
+            </a>
+            <a
+              href="https://www.restinairport.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-sky-500/40 rounded-lg p-4 transition-all"
+            >
+              <div className="flex-shrink-0 w-8 h-8 bg-sky-500/10 rounded-md flex items-center justify-center mt-0.5">
+                <Plane className="w-4 h-4 text-sky-400" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">
+                  RestInAirport.com
+                </p>
+                <p className="text-xs text-gray-400 mt-0.5 leading-relaxed">
+                  Airport transit hotels, sleep pods, and terminal accommodation for long-haul layovers and relocation flights.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} ImmigrationInfoGuide. All rights reserved.
           </p>
           <a
             href="mailto:contact@visainfoguide.com"
-            className="text-sm text-gray-400 hover:text-indigo-400 transition-colors mt-4 sm:mt-0 inline-flex items-center gap-2"
+            className="text-sm text-gray-400 hover:text-sky-400 transition-colors mt-4 sm:mt-0 inline-flex items-center gap-2"
           >
             <Mail className="w-4 h-4" />
             contact@visainfoguide.com

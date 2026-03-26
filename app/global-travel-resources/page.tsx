@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { ArrowRight, Globe, MapPin, Building2, Plane, FileText, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Global Travel and Immigration Resources – Visas, Airport Hotels, Residency Guides',
+  title: 'Global Travel & Immigration Resources | Visas & Guides',
   description:
     'Plan international travel and relocation with visa requirement tools, airport transit hotel guides, and immigration visa resources worldwide.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com/global-travel-resources',
   },
   openGraph: {
-    title: 'Global Travel and Immigration Resources – Visas, Airport Hotels, Residency Guides',
+    title: 'Global Travel & Immigration Resources | Visas & Guides',
     description:
       'Plan international travel and relocation with visa requirement tools, airport transit hotel guides, and immigration visa resources worldwide.',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Global Travel and Immigration Resources – Visas, Airport Hotels, Residency Guides',
+    title: 'Global Travel & Immigration Resources | Visas & Guides',
     description:
       'Plan international travel and relocation with visa requirement tools, airport transit hotel guides, and immigration visa resources worldwide.',
     images: ['/og-image.webp'],

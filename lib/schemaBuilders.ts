@@ -71,7 +71,7 @@ export function buildOrganizationSchema() {
     description:
       'Plan your relocation and explore legal pathways for long-term stay. Find immigration options based on your passport, destination, and goals.',
     sameAs: [
-      'https://visainfoguide.com',
+      'https://www.visainfoguide.com',
     ],
   };
 }
@@ -155,6 +155,23 @@ export function buildCollectionPageSchema(options: CollectionPageOptions) {
     name: options.name,
     description: options.description,
     url: options.url,
+  };
+}
+
+export function buildWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/path-finder?destination={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 

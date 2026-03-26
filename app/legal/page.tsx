@@ -1,8 +1,17 @@
-import { AlertTriangle } from 'lucide-react';
+import { TriangleAlert as AlertTriangle } from 'lucide-react';
 
 export const metadata = {
   title: 'Legal Disclaimer - ImmigrationInfoGuide.com',
-  description: 'Important legal information and disclaimers',
+  description: 'Legal disclaimer for ImmigrationInfoGuide.com. All immigration information is provided for general guidance only and does not constitute legal advice. Verify all details with official government sources.',
+  alternates: {
+    canonical: 'https://immigrationinfoguide.com/legal',
+  },
+  openGraph: {
+    title: 'Legal Disclaimer - ImmigrationInfoGuide.com',
+    description: 'Legal disclaimer for ImmigrationInfoGuide.com. All immigration information is provided for general guidance only and does not constitute legal advice.',
+    type: 'website',
+    url: 'https://immigrationinfoguide.com/legal',
+  },
 };
 
 export default function LegalPage() {

@@ -3,7 +3,16 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Terms of Use - ImmigrationInfoGuide.com',
-  description: 'Terms of Use for ImmigrationInfoGuide.com. Read our terms and conditions for using our immigration information resources.',
+  description: 'Terms of Use for ImmigrationInfoGuide.com. Read our terms and conditions governing use of our immigration information resources, tools, and guides.',
+  alternates: {
+    canonical: 'https://immigrationinfoguide.com/terms-of-use',
+  },
+  openGraph: {
+    title: 'Terms of Use - ImmigrationInfoGuide.com',
+    description: 'Read the terms and conditions governing use of ImmigrationInfoGuide.com immigration information resources and tools.',
+    type: 'website',
+    url: 'https://immigrationinfoguide.com/terms-of-use',
+  },
 };
 
 export default function TermsOfUsePage() {

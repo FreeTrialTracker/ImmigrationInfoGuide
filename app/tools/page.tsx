@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { StructuredData } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Free Immigration Planning Tools - Path Finder, Cost Calculator & More | ImmigrationInfoGuide.com',
+  title: 'Free Immigration Planning Tools | ImmigrationInfoGuide.com',
   description:
     'Use our free immigration planning tools to find the right visa pathway, estimate costs, generate document checklists, and compare countries. Trusted data for 52 countries.',
   alternates: {

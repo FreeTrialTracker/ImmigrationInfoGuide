@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { buildOrganizationSchema } from '@/lib/schemaBuilders';
+import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schemaBuilders';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -63,6 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const organizationSchema = buildOrganizationSchema();
+  const webSiteSchema = buildWebSiteSchema();
 
   return (
     <html lang="en">
@@ -70,6 +71,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>

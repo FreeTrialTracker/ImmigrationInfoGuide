@@ -1,4 +1,12 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 export default function BrandPushTrustBadge() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) return null;
+
   return (
     <div style={{ width: '100%', marginTop: '10px', all: 'unset' as any }}>
       <style>{`

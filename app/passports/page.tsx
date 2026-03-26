@@ -19,6 +19,13 @@ export const metadata = {
       'Find immigration and relocation options tailored to your passport. Explore where US, UK, Indian, Canadian, and other passport holders can move, work, or retire abroad.',
     url: `${BASE_URL}/passports`,
     type: 'website',
+    images: [{ url: '/og-image.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Immigration Guides by Passport | ImmigrationInfoGuide',
+    description: 'Find immigration and relocation options tailored to your passport. Explore where US, UK, Indian, Canadian, and other passport holders can move, work, or retire abroad.',
+    images: ['/og-image.webp'],
   },
 };
 

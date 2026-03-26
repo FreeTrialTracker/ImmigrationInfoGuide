@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     url: 'https://immigrationinfoguide.com/blog',
     images: [{ url: '/og-image.webp', width: 1200, height: 630 }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Immigration Blog & Global Migration Guides | ImmigrationInfoGuide',
+    description: 'Expert immigration guides covering work visas, digital nomad programs, residency pathways, and international relocation.',
+    images: ['/og-image.webp'],
+  },
 };
 
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; icon: React.ElementType }> = {

@@ -6,15 +6,15 @@ const webapps = [
   {
     category: 'Immigration & Travel',
     name: 'VisaInfoGuide.com',
-    url: 'https://visainfoguide.com',
+    url: 'https://www.visainfoguide.com',
     logo: '/VisaInfoGuide.com.png',
     description: 'Visit VisaInfoGuide.com, your trusted companion for navigating the world\'s visa landscape. Whether you\'re planning a short holiday, relocating abroad, or pursuing international opportunities, we cut through the red tape so you don\'t have to. Get clear, up-to-date guidance on visa requirements, application processes, and entry rules for countries worldwide. Travel smarter. Move with confidence.',
   },
   {
     category: 'Airport & Travel',
     name: 'RestInAirport.com',
-    url: 'https://restinairport.com',
-    logo: '/RestInAirport.com.png.png',
+    url: 'https://www.restinairport.com',
+    logo: '/RestInAirport.com.png',
     description: 'RestInAirport.com is your go-to platform for finding the best way to rest during any airport layover, anywhere in the world. Long connections, overnight flights, and transit stops do not have to be exhausting or uncertain. Discover airside transit hotels, sleep pods, private suites, and lounges you can access without leaving the airport. Every listing is built to answer what actually matters: Can you stay without immigration, where is it located, and how do you get there. Clear information, no guesswork, real options, so you can rest smarter and travel better.',
   },
 ];

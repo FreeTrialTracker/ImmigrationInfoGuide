@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Globe, ExternalLink, Clock, FileCheck, Award, ArrowRight, Info, TriangleAlert as AlertTriangle } from 'lucide-react';
+import { Globe, ExternalLink, Clock, FileCheck, Award, ArrowRight, Info, TriangleAlert as AlertTriangle, Plane } from 'lucide-react';
 import VisaEntryNotice from '@/components/VisaEntryNotice';
 import RelatedLinksSection from '@/components/seo/RelatedLinksSection';
 import type { RelatedLinkGroup } from '@/lib/seo/relatedLinks';
@@ -285,23 +285,42 @@ export default function PathwayGuidePage({
           </div>
         )}
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-lg border border-gray-200 p-6">
             <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
               <Globe className="h-5 w-5 mr-2 text-brand-primary" />
               Check Visa Entry Requirements
             </h3>
             <p className="text-sm text-gray-600 mb-4">
-              Before applying for immigration, check if you need a visa to enter {countryName}.
+              Before applying for immigration, check if you need a tourist or short-stay visa to enter {countryName}.
             </p>
             <a
-              href={`https://visainfoguide.com/${countrySlug}-visa-requirements`}
+              href="https://www.visainfoguide.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm font-medium text-brand-primary hover:text-indigo-700"
+              className="inline-flex items-center text-sm font-medium text-brand-primary hover:text-sky-700"
             >
-              View Visa Requirements
-              <ArrowRight className="h-4 w-4 ml-2" />
+              View Entry Requirements →
+              <ExternalLink className="h-3.5 w-3.5 ml-1.5" />
+            </a>
+          </div>
+
+          <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
+              <Plane className="h-5 w-5 mr-2 text-brand-primary" />
+              Plan Your Travel
+            </h3>
+            <p className="text-sm text-gray-600 mb-4">
+              Moving to {countryName} involves long international flights. Find airport transit hotels for layovers along the way.
+            </p>
+            <a
+              href="https://www.restinairport.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-brand-primary hover:text-sky-700"
+            >
+              Find Airport Hotels →
+              <ExternalLink className="h-3.5 w-3.5 ml-1.5" />
             </a>
           </div>
 

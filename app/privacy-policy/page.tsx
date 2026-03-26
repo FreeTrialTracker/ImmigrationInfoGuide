@@ -3,7 +3,16 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - ImmigrationInfoGuide.com',
-  description: 'Privacy Policy for ImmigrationInfoGuide.com. Learn how we handle your information and protect your privacy.',
+  description: 'Privacy Policy for ImmigrationInfoGuide.com. Learn how we collect, use, and protect your personal information when you use our immigration resources and tools.',
+  alternates: {
+    canonical: 'https://immigrationinfoguide.com/privacy-policy',
+  },
+  openGraph: {
+    title: 'Privacy Policy - ImmigrationInfoGuide.com',
+    description: 'Learn how ImmigrationInfoGuide.com handles your personal information and protects your privacy.',
+    type: 'website',
+    url: 'https://immigrationinfoguide.com/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {

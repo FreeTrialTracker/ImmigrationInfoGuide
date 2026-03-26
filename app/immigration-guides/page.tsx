@@ -3,13 +3,13 @@ import ImmigrationGuidesClient from './ImmigrationGuidesClient';
 import { buildBreadcrumbSchema } from '@/lib/schemaBuilders';
 
 export const metadata: Metadata = {
-  title: 'Immigration Guides by Country | Work Visas, Residency & More | ImmigrationInfoGuide.com',
+  title: 'Immigration Guides by Country | Work Visas & Residency',
   description: 'Country-by-country immigration guides for 52+ destinations. Work permits, residency pathways, digital nomad visas, and long-term relocation options covered.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com/immigration-guides',
   },
   openGraph: {
-    title: 'Immigration Guides by Country | Work Visas, Residency & More',
+    title: 'Immigration Guides by Country | Work Visas & Residency',
     description: 'Country-by-country immigration guides for 52+ destinations. Work permits, residency, digital nomad visas, and relocation options.',
     type: 'website',
     url: 'https://immigrationinfoguide.com/immigration-guides',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Immigration Guides by Country | Work Visas, Residency & More',
+    title: 'Immigration Guides by Country | Work Visas & Residency',
     description: 'Country-by-country immigration guides for 52+ destinations. Work permits, residency, digital nomad visas, and relocation options.',
     images: ['/og-image.webp'],
   },

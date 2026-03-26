@@ -12,6 +12,7 @@ import BlogFaqSection from '@/components/blog/BlogFaqSection';
 import BlogArticleContent from '@/components/blog/BlogArticleContent';
 import { getBlogRelatedLinks } from '@/lib/seo/relatedLinks';
 import RelatedLinksSection from '@/components/seo/RelatedLinksSection';
+import BackNavigation from '@/components/BackNavigation';
 
 type Props = {
   params: { slug: string };
@@ -100,7 +101,8 @@ export default async function BlogArticlePage({ params }: Props) {
 
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b border-gray-200">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+            <BackNavigation fallbackUrl="/blog" label="Back to Blog" />
             <SEOBreadcrumbs
               items={[
                 { label: 'Home', href: '/' },

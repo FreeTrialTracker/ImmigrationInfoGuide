@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Compass, BookOpen, Wrench, ChevronDown, Search, FolderOpen } from 'lucide-react';
+import { Compass, BookOpen, Wrench, ChevronDown, Search, FolderOpen, FileText, Plane, ExternalLink } from 'lucide-react';
 import {
   Popover,
   PopoverContent,
@@ -78,6 +78,54 @@ export default function Header() {
               <FolderOpen className="w-4 h-4" />
               Resources
             </Link>
+            <Popover>
+              <PopoverTrigger asChild>
+                <button
+                  className="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-brand-primary transition-colors border border-gray-200 hover:border-brand-primary/40 rounded-md px-3 py-1.5"
+                  aria-label="Sister sites"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                  Sister Sites
+                  <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
+                </button>
+              </PopoverTrigger>
+              <PopoverContent className="w-72 p-0" align="end">
+                <div className="p-3 border-b bg-gray-50">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Travel Resource Network</p>
+                </div>
+                <div className="p-2 space-y-1">
+                  <a
+                    href="https://www.visainfoguide.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 px-3 py-3 rounded-md hover:bg-sky-50 transition-colors group"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 bg-sky-100 rounded-md flex items-center justify-center mt-0.5">
+                      <FileText className="w-4 h-4 text-sky-600" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-900 group-hover:text-sky-700">VisaInfoGuide.com</p>
+                      <p className="text-xs text-gray-500 mt-0.5">Tourist & short-stay visa requirements</p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.restinairport.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 px-3 py-3 rounded-md hover:bg-sky-50 transition-colors group"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 bg-sky-100 rounded-md flex items-center justify-center mt-0.5">
+                      <Plane className="w-4 h-4 text-sky-600" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-900 group-hover:text-sky-700">RestInAirport.com</p>
+                      <p className="text-xs text-gray-500 mt-0.5">Airport hotels, layover & transit stays</p>
+                    </div>
+                  </a>
+                </div>
+              </PopoverContent>
+            </Popover>
+
             <Popover open={isOpen} onOpenChange={setIsOpen}>
               <PopoverTrigger asChild>
                 <button

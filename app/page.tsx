@@ -9,7 +9,7 @@ import BlogSection from '@/components/BlogSection';
 import BrandPushTrustBadge from '@/components/BrandPushTrustBadge';
 
 export const metadata = {
-  title: 'ImmigrationInfoGuide.com - Work, Residency, Digital Nomad, and Long-Stay Pathways',
+  title: 'ImmigrationInfoGuide.com | Immigration Pathways & Guides',
   description: 'Immigration pathway finder, cost calculator, and guides for 52 countries. Find work visas, digital nomad visas, retirement options, and study permits worldwide.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com',

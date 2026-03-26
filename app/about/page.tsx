@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About ImmigrationInfoGuide.com | Free Immigration Information',
   description: 'Learn about ImmigrationInfoGuide.com, your independent resource for immigration pathways and long-term relocation information worldwide.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com/about',

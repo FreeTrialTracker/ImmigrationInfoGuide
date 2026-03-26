@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Clock, DollarSign, CircleCheck as CheckCircle, Badge, Calculator, BookOpen, FileText, Compass, Globe } from 'lucide-react';
+import { ExternalLink, Clock, DollarSign, CircleCheck as CheckCircle, Badge, Calculator, BookOpen, FileText, Compass, Globe, FileSearch, Plane } from 'lucide-react';
+import BackNavigation from '@/components/BackNavigation';
 import { supabase, getPassports, getCountries } from '@/lib/supabaseClient';
 import { starterPassports } from '@/data/starterPassports';
 import { starterDestinations } from '@/data/starterDestinations';
@@ -25,7 +26,6 @@ interface Pathway {
 
 export default function ResultsContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [pathways, setPathways] = useState<Pathway[]>([]);
   const [passportName, setPassportName] = useState('');
   const [destinationName, setDestinationName] = useState('');
@@ -121,13 +121,7 @@ export default function ResultsContent() {
 
   return (
     <div>
-      <button
-        onClick={() => router.back()}
-        className="flex items-center text-sm text-gray-600 hover:text-brand-primary mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4 mr-2" />
-        Back to Path Finder
-      </button>
+      <BackNavigation fallbackUrl="/path-finder" label="Back to Path Finder" className="mb-6" />
 
       <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">
@@ -260,7 +254,36 @@ export default function ResultsContent() {
         </div>
       )}
 
-      <div className="mt-10 bg-gray-50 rounded-xl border border-gray-200 p-6">
+      <div className="mt-10 grid sm:grid-cols-2 gap-4 mb-6">
+        <a
+          href="https://www.visainfoguide.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-start gap-3 bg-sky-50 border border-sky-200 hover:border-sky-400 rounded-lg p-4 transition-all group"
+        >
+          <FileSearch className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700">Check Entry Visa Requirements</p>
+            <p className="text-xs text-sky-700 mt-0.5">Before you apply — do you need a tourist visa to visit {destinationName} first?</p>
+            <p className="text-xs text-sky-500 mt-1 font-medium">VisaInfoGuide.com →</p>
+          </div>
+        </a>
+        <a
+          href="https://www.restinairport.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-start gap-3 bg-sky-50 border border-sky-200 hover:border-sky-400 rounded-lg p-4 transition-all group"
+        >
+          <Plane className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700">Find Airport Transit Hotels</p>
+            <p className="text-xs text-sky-700 mt-0.5">Planning a long-haul relocation flight? Find hotels for layovers and connecting flights.</p>
+            <p className="text-xs text-sky-500 mt-1 font-medium">RestInAirport.com →</p>
+          </div>
+        </a>
+      </div>
+
+      <div className="mt-4 bg-gray-50 rounded-xl border border-gray-200 p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-5">Next Steps</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {destination && (

@@ -7,22 +7,22 @@ import { Calculator, TrendingUp, FileText, ArrowRight } from 'lucide-react';
 import { getAllCountriesWithPathways, getCountriesByRegion } from '@/lib/immigrationCostData';
 
 export const metadata: Metadata = {
-  title: 'Immigration Cost Calculator | Estimate Visa & Immigration Fees',
-  description: 'Calculate the total cost of immigrating to your destination. Transparent visa fees, medical exam costs, legal fees, and proof of funds for 50+ countries.',
+  title: 'Immigration Costs by Country | Visa Fees & Pathway Breakdowns',
+  description: 'Browse immigration costs for 50+ countries. Compare visa fees, proof of funds, legal costs, and pathway-by-pathway breakdowns for every major destination.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com/immigration-cost',
   },
   openGraph: {
-    title: 'Immigration Cost Calculator | Estimate Visa & Immigration Fees',
-    description: 'Calculate the total cost of immigrating to your destination. Transparent visa fees, medical exam costs, and proof of funds for 50+ countries.',
+    title: 'Immigration Costs by Country | Visa Fees & Pathway Breakdowns',
+    description: 'Browse immigration costs for 50+ countries. Compare visa fees, proof of funds, legal costs, and pathway-by-pathway breakdowns.',
     type: 'website',
     url: 'https://immigrationinfoguide.com/immigration-cost',
     images: [{ url: '/og-image.webp', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Immigration Cost Calculator | Estimate Visa & Immigration Fees',
-    description: 'Calculate the total cost of immigrating to your destination. Transparent visa fees, medical exam costs, and proof of funds for 50+ countries.',
+    title: 'Immigration Costs by Country | Visa Fees & Pathway Breakdowns',
+    description: 'Browse immigration costs for 50+ countries. Compare visa fees, proof of funds, legal costs, and pathway-by-pathway breakdowns.',
     images: ['/og-image.webp'],
   },
 };

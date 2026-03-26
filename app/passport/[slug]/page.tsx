@@ -31,6 +31,7 @@ import {
 import { getPassportRelatedLinks } from '@/lib/passport/passportRelatedLinks';
 import { getAllBlogPosts } from '@/lib/blogData';
 import RelatedLinksSection from '@/components/seo/RelatedLinksSection';
+import BackNavigation from '@/components/BackNavigation';
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -120,6 +121,9 @@ export default async function PassportPage({ params }: { params: { slug: string 
       <div className="min-h-screen bg-gray-50">
         <div className="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-16">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-4">
+              <BackNavigation fallbackUrl="/passports" label="Back to Passports" className="text-slate-300 hover:text-white hover:bg-slate-700" />
+            </div>
             <nav className="flex items-center space-x-2 text-slate-400 text-sm mb-6">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="h-3.5 w-3.5" />

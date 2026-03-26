@@ -2,11 +2,18 @@ import { Suspense } from 'react';
 import ResultsContent from './ResultsContent';
 
 export const metadata = {
-  title: 'Immigration Pathways Results - Visa Options & Requirements | ImmigrationInfoGuide',
-  description: 'View detailed immigration pathways, visa requirements, processing times, and eligibility criteria for your chosen destination.',
+  title: 'Immigration Pathways Results | ImmigrationInfoGuide',
+  description: 'View matched immigration pathways, visa requirements, processing times, and eligibility criteria for your chosen destination and passport.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://immigrationinfoguide.com/path-finder',
+  },
   openGraph: {
     title: 'Immigration Pathways Results',
-    description: 'View detailed immigration pathways, visa requirements, and eligibility criteria.',
+    description: 'View matched immigration pathways, visa requirements, and eligibility criteria.',
     type: 'website',
   },
 };

@@ -3,13 +3,13 @@ import VisaEntryGuidesClient from './VisaEntryGuidesClient';
 import { buildBreadcrumbSchema } from '@/lib/schemaBuilders';
 
 export const metadata: Metadata = {
-  title: 'Visa & Entry Requirements by Country | Tourist & Short-Stay Guides',
+  title: 'Visa & Entry Requirements by Country | Short-Stay Guides',
   description: 'Tourist and short-stay visa requirements for 52+ countries. Check entry requirements, visa-on-arrival eligibility, and e-visa options by destination.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com/visa-entry-guides',
   },
   openGraph: {
-    title: 'Visa & Entry Requirements by Country | Tourist & Short-Stay Guides',
+    title: 'Visa & Entry Requirements by Country | Short-Stay Guides',
     description: 'Tourist and short-stay visa requirements for 52+ countries. Check entry requirements, visa-on-arrival eligibility, and e-visa options.',
     type: 'website',
     url: 'https://immigrationinfoguide.com/visa-entry-guides',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Visa & Entry Requirements by Country | Tourist & Short-Stay Guides',
+    title: 'Visa & Entry Requirements by Country | Short-Stay Guides',
     description: 'Tourist and short-stay visa requirements for 52+ countries. Check entry requirements, visa-on-arrival eligibility, and e-visa options.',
     images: ['/og-image.webp'],
   },

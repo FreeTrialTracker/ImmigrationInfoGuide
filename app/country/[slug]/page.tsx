@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Globe, ArrowRight, DollarSign, Languages, Briefcase, Heart, GraduationCap, Chrome as Home, ExternalLink, Calculator, FileText, ChartBar as BarChart2, BookOpen, Compass } from 'lucide-react';
+import BackNavigation from '@/components/BackNavigation';
 import { supabase } from '@/lib/supabaseClient';
 import CrossDomainLink from '@/components/CrossDomainLink';
 import { buildBreadcrumbSchema, buildArticleSchema, buildFaqSchema } from '@/lib/schemaBuilders';
@@ -132,6 +133,7 @@ export default async function CountryPage({ params }: { params: { slug: string }
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+        <BackNavigation fallbackUrl="/immigration-guides" label="Back to Guides" className="mb-4" />
         <div className="flex items-center space-x-3 mb-2">
           <Globe className="h-8 w-8 text-brand-primary" />
           <h1 className="text-3xl font-bold text-gray-900">

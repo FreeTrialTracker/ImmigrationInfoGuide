@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Calculator, ArrowRight, Chrome as Home, Calendar, CircleAlert as AlertCircle, Globe, Compass, FileText, ChartBar as BarChart2, BookOpen } from 'lucide-react';
+import BackNavigation from '@/components/BackNavigation';
 import { getAllBlogPosts } from '@/lib/blogData';
 import { getCostPathwayRelatedLinks } from '@/lib/seo/relatedLinks';
 import RelatedLinksSection from '@/components/seo/RelatedLinksSection';
@@ -96,6 +97,7 @@ export default async function ImmigrationCostPathwayPage({
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="max-w-4xl mx-auto space-y-8">
+          <BackNavigation fallbackUrl={`/immigration-cost/${params.country}`} label="Back" />
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-foreground">
               <Home className="w-4 h-4" />

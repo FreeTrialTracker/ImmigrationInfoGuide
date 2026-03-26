@@ -3,7 +3,7 @@ import CountryFinderClient from './CountryFinderClient';
 import { buildBreadcrumbSchema, buildCollectionPageSchema } from '@/lib/schemaBuilders';
 
 export const metadata: Metadata = {
-  title: 'Country Finder - Browse 52 Immigration Destinations | ImmigrationInfoGuide.com',
+  title: 'Country Finder | Browse 52 Immigration Destinations',
   description: 'Browse 52 immigration destinations worldwide. Explore residency, work visas, digital nomad visas, and more by country or region.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com/country-finder',

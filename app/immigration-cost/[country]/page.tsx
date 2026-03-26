@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Calculator, ArrowRight, Chrome as Home, Globe, Compass, FileText, ChartBar as BarChart2, BookOpen } from 'lucide-react';
+import BackNavigation from '@/components/BackNavigation';
+import { Calculator, ArrowRight, Chrome as Home, Globe, Compass, FileText, ChartBar as BarChart2, BookOpen, Plane } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/blogData';
 import { getCostCountryRelatedLinks } from '@/lib/seo/relatedLinks';
 import RelatedLinksSection from '@/components/seo/RelatedLinksSection';
@@ -111,6 +112,7 @@ export default async function ImmigrationCostCountryPage({ params }: { params: {
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="max-w-4xl mx-auto space-y-8">
+          <BackNavigation fallbackUrl="/immigration-cost" label="Back to Immigration Cost" />
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-foreground">
               <Home className="w-4 h-4" />
@@ -265,6 +267,33 @@ export default async function ImmigrationCostCountryPage({ params }: { params: {
                 Calculate Your {country.name} Immigration Costs
               </Button>
             </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4 p-5 bg-sky-50 border border-sky-200 rounded-xl">
+            <a
+              href="https://www.visainfoguide.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 group"
+            >
+              <FileText className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Check {country.name} Entry Visa Requirements →</p>
+                <p className="text-xs text-sky-700 mt-0.5">New to {country.name}? Check if you need a tourist or short-stay visa before applying for immigration. VisaInfoGuide.com</p>
+              </div>
+            </a>
+            <a
+              href="https://www.restinairport.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 group"
+            >
+              <Plane className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Find Airport Hotels for Your Journey →</p>
+                <p className="text-xs text-sky-700 mt-0.5">Relocating to {country.name} means long international flights. Find airside transit hotels for layovers. RestInAirport.com</p>
+              </div>
+            </a>
           </div>
 
           <div className="border-t pt-8 mt-4">

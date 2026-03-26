@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calculator, ArrowRight, TrendingUp, DollarSign, Check, X } from 'lucide-react';
+import { Calculator, ArrowRight, TrendingUp, DollarSign, Check, X, FileText, Plane } from 'lucide-react';
+import BackNavigation from '@/components/BackNavigation';
 import { getCountryComparison, generateComparisonFAQs } from '@/lib/seoHelpers';
 import { formatCurrencyByCode } from '@/lib/immigrationCostCalculator';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
@@ -116,6 +117,7 @@ export default async function ImmigrationCostComparePage({
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-6xl mx-auto space-y-12">
+            <BackNavigation fallbackUrl="/country-comparison" label="Back to Comparisons" />
             <SEOBreadcrumbs items={breadcrumbs} />
 
             <div className="space-y-6">
@@ -158,6 +160,33 @@ export default async function ImmigrationCostComparePage({
                     Calculate Costs
                   </Button>
                 </Link>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4 mt-2 p-5 bg-sky-50 border border-sky-200 rounded-xl">
+                <a
+                  href="https://www.visainfoguide.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group"
+                >
+                  <FileText className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Check entry visa requirements →</p>
+                    <p className="text-xs text-sky-700 mt-0.5">Planning a scouting visit? Check tourist visa requirements for {country1.name} and {country2.name} on VisaInfoGuide.com.</p>
+                  </div>
+                </a>
+                <a
+                  href="https://www.restinairport.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group"
+                >
+                  <Plane className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Find airport transit hotels →</p>
+                    <p className="text-xs text-sky-700 mt-0.5">Traveling to compare these destinations in person? Find airside hotels for long-haul layovers at RestInAirport.com.</p>
+                  </div>
+                </a>
               </div>
             </div>
 

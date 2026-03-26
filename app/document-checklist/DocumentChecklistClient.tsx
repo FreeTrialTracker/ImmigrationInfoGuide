@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, FileCheck, Printer, Download, CircleAlert as AlertCircle } from 'lucide-react';
+import { Check, FileCheck, Printer, Download, CircleAlert as AlertCircle, FileText, Plane } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -691,6 +691,33 @@ export default function DocumentChecklistClient() {
                 or consult with a licensed immigration advisor. Keep copies of all documents for your records.
               </AlertDescription>
             </Alert>
+
+            <div className="grid sm:grid-cols-2 gap-4 p-5 bg-sky-50 border border-sky-200 rounded-xl">
+              <a
+                href="https://www.visainfoguide.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
+                <FileText className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Need an entry visa while waiting? →</p>
+                  <p className="text-xs text-sky-700 mt-0.5">Check if you need a tourist or short-stay visa to enter your destination while your main permit is being processed. VisaInfoGuide.com</p>
+                </div>
+              </a>
+              <a
+                href="https://www.restinairport.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
+                <Plane className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Plan your relocation flight →</p>
+                  <p className="text-xs text-sky-700 mt-0.5">Long-haul international relocation flights often involve layovers. Find airside hotels and sleep pods at RestInAirport.com.</p>
+                </div>
+              </a>
+            </div>
           </>
         )}
       </div>

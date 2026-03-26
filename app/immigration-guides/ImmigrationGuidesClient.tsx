@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FileText, Globe, ArrowRight, ChevronDown, ChevronUp, Calculator, Compass, ChartBar as BarChart2, ClipboardList } from 'lucide-react';
+import { FileText, Globe, ArrowRight, ChevronDown, ChevronUp, Calculator, Compass, ChartBar as BarChart2, ClipboardList, Plane } from 'lucide-react';
 import { supabase } from '@/lib/supabaseClient';
 import { useState, useEffect } from 'react';
 
@@ -77,13 +77,46 @@ export default function ImmigrationGuidesClient() {
   return (
     <div className="min-h-screen bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h1 className="text-3xl font-bold text-gray-900 mb-3">
             Immigration Guides
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Comprehensive country-by-country guides covering work permits, residency options, and long-term relocation pathways.
           </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-10 p-5 bg-sky-50 border border-sky-200 rounded-xl">
+          <div>
+            <p className="text-xs font-semibold text-sky-600 uppercase tracking-wide mb-2">Before you plan your immigration</p>
+            <a
+              href="https://www.visainfoguide.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 group"
+            >
+              <FileText className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Check entry visa requirements →</p>
+                <p className="text-xs text-sky-700 mt-0.5">Do you need a tourist or short-stay visa to visit your destination first? VisaInfoGuide.com has requirements for 190+ countries.</p>
+              </div>
+            </a>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-sky-600 uppercase tracking-wide mb-2">Planning your relocation flight</p>
+            <a
+              href="https://www.restinairport.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 group"
+            >
+              <Plane className="h-5 w-5 text-sky-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-sm font-semibold text-sky-900 group-hover:text-sky-700 transition-colors">Find airport transit hotels →</p>
+                <p className="text-xs text-sky-700 mt-0.5">Long-haul relocation flights often mean overnight layovers. RestInAirport.com helps you find airside hotels and sleep pods.</p>
+              </div>
+            </a>
+          </div>
         </div>
 
         {regions.length === 0 ? (
