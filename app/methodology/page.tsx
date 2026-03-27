@@ -4,10 +4,14 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Methodology - ImmigrationInfoGuide.com',
   description: 'Learn about our research methodology and how we compile immigration information for ImmigrationInfoGuide.com.',
+  alternates: {
+    canonical: 'https://immigrationinfoguide.com/methodology',
+  },
   openGraph: {
     title: 'Our Research Methodology | ImmigrationInfoGuide.com',
     description: 'How we research and verify immigration data. Our methodology for collecting, fact-checking, and updating pathway information for 52+ countries.',
     type: 'website',
+    url: 'https://immigrationinfoguide.com/methodology',
     images: [{ url: '/og-image.webp', width: 1200, height: 630 }],
   },
   twitter: {

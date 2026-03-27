@@ -4,10 +4,14 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Data Sources - ImmigrationInfoGuide.com',
   description: 'Official government sources and references used by ImmigrationInfoGuide.com to compile immigration pathway information.',
+  alternates: {
+    canonical: 'https://immigrationinfoguide.com/data-sources',
+  },
   openGraph: {
     title: 'Data Sources & References | ImmigrationInfoGuide.com',
     description: 'Official government sources and research references used to compile immigration pathway data for 52+ countries.',
     type: 'website',
+    url: 'https://immigrationinfoguide.com/data-sources',
     images: [{ url: '/og-image.webp', width: 1200, height: 630 }],
   },
   twitter: {
