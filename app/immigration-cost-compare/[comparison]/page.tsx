@@ -132,9 +132,7 @@ export default async function ImmigrationCostComparePage({
               </h1>
 
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Deciding between {country1.name} and {country2.name} for immigration? Cost is a critical factor.
-                This comprehensive comparison analyzes visa fees, proof of funds requirements, pathway options,
-                and total expenses to help you make an informed decision.
+                Side-by-side comparison of immigration costs for {country1.name} and {country2.name}. Covers visa application fees across key pathways, proof-of-funds requirements, medical exam costs, and other typical expenses. For eligibility and pathway details, see the full immigration hubs for each country.
               </p>
 
               {cheaper && (
@@ -415,37 +413,68 @@ export default async function ImmigrationCostComparePage({
 
             <Card className="border-primary/20 bg-primary/5">
               <CardHeader>
-                <CardTitle className="text-2xl">Which Country Should You Choose?</CardTitle>
+                <CardTitle className="text-2xl">Which Destination is Right for You?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
+                <p className="text-sm text-muted-foreground">
+                  Immigration cost is one factor. The more decisive factors are usually eligibility, long-term settlement potential, and the specific rights each route grants. Use the guidance below to narrow down your decision.
+                </p>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <h3 className="font-semibold text-lg">Choose {country1.name} if:</h3>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>- You have skills or experience that align with {country1.name}'s priority sectors</li>
-                      <li>- You prefer {country1.region} culture and climate</li>
-                      <li>- You have family or professional connections in {country1.name}</li>
-                      <li>- {country1.name}'s pathway requirements better match your profile</li>
+                  <div className="space-y-4 bg-background rounded-lg p-5">
+                    <h3 className="font-semibold text-lg border-b pb-2">Consider {country1.name} if:</h3>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        Your qualifications match {country1.name}&apos;s available pathway types — verify specific eligibility criteria on the {country1.name} immigration hub.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        You need a specific outcome (work authorization, permanent residence, or citizenship) that {country1.name}&apos;s routes support on your timeline.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        You have professional connections, a job offer, or existing family ties in {country1.name} — these are significant eligibility advantages.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        The language of official business and daily life in {country1.name} is manageable for your situation.
+                      </li>
                     </ul>
                   </div>
 
-                  <div className="space-y-4">
-                    <h3 className="font-semibold text-lg">Choose {country2.name} if:</h3>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>- Your qualifications better align with {country2.name}'s immigration criteria</li>
-                      <li>- You prefer {country2.region} lifestyle and opportunities</li>
-                      <li>- You have existing ties or support networks in {country2.name}</li>
-                      <li>- {country2.name}'s processing times better suit your timeline</li>
+                  <div className="space-y-4 bg-background rounded-lg p-5">
+                    <h3 className="font-semibold text-lg border-b pb-2">Consider {country2.name} if:</h3>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        {country2.name}&apos;s immigration pathway types align more closely with your purpose — verify eligibility on the {country2.name} immigration hub.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        The proof-of-funds and financial requirements of {country2.name}&apos;s routes are more compatible with your financial profile.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        You prefer the employment market conditions, healthcare access, or long-term settlement conditions in {country2.region}.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        {country2.name}&apos;s processing timelines and visa categories are more practical for your planned arrival date.
+                      </li>
                     </ul>
                   </div>
                 </div>
 
-                <div className="bg-background rounded-lg p-6 space-y-3">
-                  <p className="font-medium">Important: Cost shouldn't be your only consideration</p>
+                <div className="bg-background rounded-lg p-6 space-y-3 border border-border">
+                  <p className="font-medium">Key decision factors beyond cost</p>
                   <p className="text-sm text-muted-foreground">
-                    While immigration costs are important, also consider job opportunities, quality of life,
-                    healthcare, education systems, climate, culture, and long-term career prospects.
-                    The "cheaper" country may not always be the best choice for your specific situation.
+                    Immigration cost comparisons are useful for budgeting, but your actual eligibility, language requirements, long-term settlement rights, and work authorization conditions matter more. Use our{' '}
+                    <Link href="/path-finder" className="text-primary hover:underline">Immigration Path Finder</Link>{' '}
+                    to compare which routes you qualify for in both countries, and review the full immigration hubs for{' '}
+                    <Link href={`/immigrate-to/${parts[0]}`} className="text-primary hover:underline">{country1.name}</Link>{' '}
+                    and{' '}
+                    <Link href={`/immigrate-to/${parts[1]}`} className="text-primary hover:underline">{country2.name}</Link>{' '}
+                    before making a decision.
                   </p>
                 </div>
               </CardContent>

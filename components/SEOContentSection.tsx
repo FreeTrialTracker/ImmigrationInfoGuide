@@ -5,71 +5,61 @@ export default function SEOContentSection() {
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Main Content Header */}
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Immigration Resources & Tools
+            Immigration Guides, Tools, and Pathway Research
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Navigate your immigration journey with confidence using our extensive library of country guides,
-            pathway information, and cost calculators. Whether you're planning to work abroad, retire overseas,
-            or explore digital nomad opportunities, we provide the information you need.
+            Research legal immigration pathways across 52 countries. Compare routes by purpose, eligibility, cost, and long-term settlement potential — from work permits to permanent residence.
           </p>
         </div>
 
-        {/* Content Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-          {/* Immigration Cost Calculator */}
           <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
-                <Calculator className="w-6 h-6 text-brand-primary" />
+              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                <Calculator className="w-6 h-6 text-amber-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Cost Calculator</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Immigration Cost Calculator</h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Estimate the total cost of immigrating to your desired destination. Our comprehensive calculator
-              includes visa fees, proof of funds requirements, processing costs, and more.
+              Estimate total immigration costs by country and pathway. Covers visa fees, medical examinations, language testing, proof-of-funds requirements, and government processing charges.
             </p>
             <Link
               href="/immigration-cost-calculator"
-              className="text-brand-primary hover:text-indigo-700 font-medium inline-flex items-center"
+              className="text-amber-600 hover:text-amber-700 font-medium inline-flex items-center"
             >
-              Calculate Immigration Costs
+              Calculate Your Immigration Costs
             </Link>
           </div>
 
-          {/* Path Finder Tool */}
           <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
                 <Search className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Pathway Finder</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Immigration Path Finder</h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Find immigration pathways tailored to your passport, destination country, and goals. Discover work
-              visas, study permits, digital nomad visas, and permanent residency options.
+              Enter your passport and destination country to surface the immigration routes most relevant to your goal — work authorization, long-term residence, study, retirement, or investment.
             </p>
             <Link
               href="/path-finder"
               className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center"
             >
-              Find Your Pathway
+              Find Pathways for Your Situation
             </Link>
           </div>
 
-          {/* Country Guides */}
           <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                 <Globe className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Country Guides</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Country Immigration Guides</h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Explore detailed guides for 52 countries covering immigration requirements, cost of living,
-              healthcare systems, and popular pathways for different goals.
+              In-depth immigration hub pages for 52 countries. Each guide covers the main stay routes, temporary vs. permanent distinctions, eligibility themes, and links to specific pathway pages.
             </p>
             <Link
               href="/immigration-guides"
@@ -79,37 +69,33 @@ export default function SEOContentSection() {
             </Link>
           </div>
 
-          {/* Visa Entry Guides */}
           <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                <FileText className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mr-4">
+                <FileText className="w-6 h-6 text-sky-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Visa Requirements</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Visa Entry Requirements</h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Check visa requirements and entry regulations for destinations worldwide. Understand tourist visa
-              rules, visa-free access, and short-term stay options.
+              Check tourist visa requirements, visa-free access, and short-stay rules before planning a scouting trip or initial entry. Useful for understanding entry conditions separately from long-term immigration.
             </p>
             <Link
               href="/visa-entry-guides"
-              className="text-purple-600 hover:text-purple-700 font-medium inline-flex items-center"
+              className="text-sky-600 hover:text-sky-700 font-medium inline-flex items-center"
             >
-              Check Visa Requirements
+              Check Visa Entry Requirements
             </Link>
           </div>
 
-          {/* Methodology */}
           <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
                 <BookOpen className="w-6 h-6 text-orange-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Our Methodology</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Research Methodology</h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Learn how we research and compile immigration information. Our data comes from official government
-              sources, immigration authorities, and verified resources.
+              Understand how we source and verify immigration information. All pathway data references official government portals and immigration authority publications.
             </p>
             <Link
               href="/methodology"
@@ -119,17 +105,15 @@ export default function SEOContentSection() {
             </Link>
           </div>
 
-          {/* Country Finder */}
           <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
                 <Map className="w-6 h-6 text-cyan-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Country Finder</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Country Comparison Tool</h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Compare immigration destinations side by side. Filter by region, language, cost of living, and
-              available pathways to find your ideal destination.
+              Compare immigration destinations side by side. Filter by region, language, cost of living, and available pathways. Useful for narrowing down two or three serious candidates.
             </p>
             <Link
               href="/country-finder"
@@ -140,131 +124,94 @@ export default function SEOContentSection() {
           </div>
         </div>
 
-        {/* Rich Text Content for SEO */}
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Understanding Immigration Pathways and Visa Options
+              How Immigration Pathways Work: Key Distinctions
             </h3>
 
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
-                Immigration pathways vary significantly depending on your goals, qualifications, and target destination.
-                Whether you're seeking <Link href="/path-finder" className="text-brand-primary hover:underline">work opportunities abroad</Link>,
-                planning to <Link href="/immigration-guides" className="text-brand-primary hover:underline">retire in a new country</Link>,
-                or exploring <strong>digital nomad visa programs</strong>, understanding the available options is crucial for a successful
-                immigration journey.
+                Immigration pathways are not interchangeable. A <strong>visa</strong> is typically an entry authorization. A <strong>permit</strong> is the document that governs your right to stay and work once you are in the country. A <strong>temporary residence permit</strong> grants legal stay for a defined period and may need to be renewed. <strong>Permanent residence</strong> grants indefinite stay rights without regular renewal. <strong>Citizenship</strong> is a separate legal status entirely, often requiring years of prior residence and a separate application.
+              </p>
+              <p>
+                Understanding where your chosen pathway sits in this hierarchy is essential before committing to an application process. Use our <Link href="/path-finder" className="text-brand-primary hover:underline">Immigration Path Finder</Link> to identify which routes match your goals, then check the detailed pathway pages to understand whether each route leads to temporary stay, permanent residence, or neither.
               </p>
 
-              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Popular Immigration Categories</h4>
-
+              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Work-Based Immigration Pathways</h4>
               <p>
-                <strong>Work Visas and Employment-Based Immigration:</strong> Many countries offer skilled worker programs that allow
-                foreign nationals to live and work legally. Popular destinations like{' '}
-                <Link href="/country/canada" className="text-brand-primary hover:underline">Canada</Link>,{' '}
-                <Link href="/country/australia" className="text-brand-primary hover:underline">Australia</Link>,{' '}
-                <Link href="/country/germany" className="text-brand-primary hover:underline">Germany</Link>, and{' '}
-                <Link href="/country/united-kingdom" className="text-brand-primary hover:underline">the United Kingdom</Link> have well-established
-                skilled migration programs with clear pathways to permanent residency.
+                Skilled worker programs allow foreign nationals to live and work legally under employer sponsorship or points-based systems. Key destinations include{' '}
+                <Link href="/immigrate-to/canada" className="text-brand-primary hover:underline">Canada</Link>,{' '}
+                <Link href="/immigrate-to/australia" className="text-brand-primary hover:underline">Australia</Link>,{' '}
+                <Link href="/immigrate-to/germany" className="text-brand-primary hover:underline">Germany</Link>, and{' '}
+                <Link href="/immigrate-to/united-kingdom" className="text-brand-primary hover:underline">the United Kingdom</Link>. Work authorization is typically tied to a specific employer or role at first, with pathways to independent permanent residence after a qualifying period.
               </p>
 
+              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Digital Nomad and Remote Work Visas</h4>
               <p>
-                <strong>Digital Nomad Visas:</strong> An increasing number of countries recognize remote workers and freelancers with
-                specialized digital nomad visa programs. Destinations such as{' '}
-                <Link href="/country/portugal" className="text-brand-primary hover:underline">Portugal</Link>,{' '}
-                <Link href="/country/spain" className="text-brand-primary hover:underline">Spain</Link>,{' '}
-                <Link href="/country/croatia" className="text-brand-primary hover:underline">Croatia</Link>, and{' '}
-                <Link href="/country/thailand" className="text-brand-primary hover:underline">Thailand</Link> offer visa options specifically
-                designed for location-independent professionals.
+                Digital nomad visa programs are designed for location-independent professionals who earn income from foreign sources. These are generally temporary stay authorizations, not permanent residence routes. Key destinations with established programs include{' '}
+                <Link href="/immigrate-to/portugal" className="text-brand-primary hover:underline">Portugal</Link>,{' '}
+                <Link href="/immigrate-to/spain" className="text-brand-primary hover:underline">Spain</Link>,{' '}
+                <Link href="/immigrate-to/croatia" className="text-brand-primary hover:underline">Croatia</Link>, and{' '}
+                <Link href="/immigrate-to/thailand" className="text-brand-primary hover:underline">Thailand</Link>. Applicants typically need to demonstrate minimum monthly income from remote employment or freelancing.
               </p>
 
+              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Student Visas and Post-Study Routes</h4>
               <p>
-                <strong>Student Visas and Study Permits:</strong> Pursuing higher education abroad can open doors to work opportunities
-                and eventual permanent residency. Countries like{' '}
-                <Link href="/country/united-states" className="text-brand-primary hover:underline">the United States</Link>,{' '}
-                <Link href="/country/canada" className="text-brand-primary hover:underline">Canada</Link>,{' '}
-                <Link href="/country/australia" className="text-brand-primary hover:underline">Australia</Link>, and{' '}
-                <Link href="/country/new-zealand" className="text-brand-primary hover:underline">New Zealand</Link> often allow international
-                students to work part-time during studies and full-time after graduation.
+                Student visas authorize study at an enrolled institution and often permit limited part-time work during the academic term. Countries including{' '}
+                <Link href="/immigrate-to/united-states" className="text-brand-primary hover:underline">the United States</Link>,{' '}
+                <Link href="/immigrate-to/canada" className="text-brand-primary hover:underline">Canada</Link>,{' '}
+                <Link href="/immigrate-to/australia" className="text-brand-primary hover:underline">Australia</Link>, and{' '}
+                <Link href="/immigrate-to/new-zealand" className="text-brand-primary hover:underline">New Zealand</Link> offer post-study work permits that provide a transitional route from study to employment-based residence.
               </p>
 
+              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Retirement and Passive Income Visas</h4>
               <p>
-                <strong>Retirement and Pensioner Visas:</strong> Several countries welcome retirees with special visa programs that require
-                proof of pension income or savings. Popular retirement destinations include{' '}
-                <Link href="/country/portugal" className="text-brand-primary hover:underline">Portugal</Link>,{' '}
-                <Link href="/country/mexico" className="text-brand-primary hover:underline">Mexico</Link>,{' '}
-                <Link href="/country/thailand" className="text-brand-primary hover:underline">Thailand</Link>, and{' '}
-                <Link href="/country/panama" className="text-brand-primary hover:underline">Panama</Link>, each offering attractive tax benefits
-                and cost of living advantages.
+                Retirement visa programs typically require proof of pension income or savings above a defined threshold. They usually authorize residence without work rights and do not automatically lead to permanent residence. Common destinations include{' '}
+                <Link href="/immigrate-to/portugal" className="text-brand-primary hover:underline">Portugal</Link>,{' '}
+                <Link href="/immigrate-to/mexico" className="text-brand-primary hover:underline">Mexico</Link>,{' '}
+                <Link href="/immigrate-to/thailand" className="text-brand-primary hover:underline">Thailand</Link>, and{' '}
+                <Link href="/immigrate-to/panama" className="text-brand-primary hover:underline">Panama</Link>.
               </p>
 
-              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Immigration Cost Considerations</h4>
-
+              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Regional Pathways Worth Comparing</h4>
               <p>
-                Understanding the <Link href="/immigration-cost-calculator" className="text-brand-primary hover:underline">total cost of immigration</Link> is
-                essential for proper planning. Costs typically include visa application fees, government processing charges, medical examinations,
-                police certificates, translation services, and proof of funds requirements. Some pathways also require significant financial investments,
-                such as investor visas or startup visa programs.
+                <strong>European Union:</strong> Non-EU nationals can access the EU Blue Card for highly skilled workers, country-specific startup visas, and long-term residence permits that may eventually convert to permanent residence. Key destinations include{' '}
+                <Link href="/immigrate-to/france" className="text-brand-primary hover:underline">France</Link>,{' '}
+                <Link href="/immigrate-to/netherlands" className="text-brand-primary hover:underline">the Netherlands</Link>,{' '}
+                <Link href="/immigrate-to/italy" className="text-brand-primary hover:underline">Italy</Link>, and{' '}
+                <Link href="/immigrate-to/ireland" className="text-brand-primary hover:underline">Ireland</Link>.
+              </p>
+              <p>
+                <strong>Asia-Pacific:</strong> High-skilled employment programs, investment migration, and long-stay options exist across{' '}
+                <Link href="/immigrate-to/singapore" className="text-brand-primary hover:underline">Singapore</Link>,{' '}
+                <Link href="/immigrate-to/japan" className="text-brand-primary hover:underline">Japan</Link>,{' '}
+                <Link href="/immigrate-to/south-korea" className="text-brand-primary hover:underline">South Korea</Link>, and{' '}
+                <Link href="/immigrate-to/malaysia" className="text-brand-primary hover:underline">Malaysia</Link>. Each has distinct eligibility criteria and limits on dependents and family inclusion.
+              </p>
+              <p>
+                <strong>Latin America:</strong>{' '}
+                <Link href="/immigrate-to/chile" className="text-brand-primary hover:underline">Chile</Link>,{' '}
+                <Link href="/immigrate-to/colombia" className="text-brand-primary hover:underline">Colombia</Link>,{' '}
+                <Link href="/immigrate-to/argentina" className="text-brand-primary hover:underline">Argentina</Link>, and{' '}
+                <Link href="/immigrate-to/brazil" className="text-brand-primary hover:underline">Brazil</Link> offer relatively accessible immigration thresholds with lower proof-of-funds requirements compared to Western Europe and North America.
               </p>
 
+              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Starting Your Research</h4>
               <p>
-                Use our <Link href="/immigration-cost-calculator" className="text-brand-primary hover:underline">Immigration Cost Calculator</Link> to
-                estimate expenses for specific pathways. The calculator provides detailed breakdowns including required documentation costs,
-                application fees, biometric fees, and settlement funds requirements for major immigration destinations.
+                Use the <Link href="/path-finder" className="text-brand-primary hover:underline">Immigration Path Finder</Link> to surface routes based on your passport and goals. Then review the relevant{' '}
+                <Link href="/immigration-guides" className="text-brand-primary hover:underline">country immigration hub</Link> to understand the full landscape of available routes, temporary vs. permanent options, and major eligibility requirements before committing to a specific pathway.
               </p>
-
-              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Regional Immigration Opportunities</h4>
-
               <p>
-                <strong>European Union:</strong> EU citizens enjoy freedom of movement across member states, but non-EU nationals can access various
-                pathways including Blue Card programs for highly skilled workers, startup visas, and country-specific work permits. Explore opportunities in{' '}
-                <Link href="/country/france" className="text-brand-primary hover:underline">France</Link>,{' '}
-                <Link href="/country/netherlands" className="text-brand-primary hover:underline">the Netherlands</Link>,{' '}
-                <Link href="/country/italy" className="text-brand-primary hover:underline">Italy</Link>, and{' '}
-                <Link href="/country/ireland" className="text-brand-primary hover:underline">Ireland</Link>.
-              </p>
-
-              <p>
-                <strong>Asia-Pacific:</strong> Countries in this region offer diverse immigration pathways from high-skilled employment programs to
-                investment migration. Key destinations include{' '}
-                <Link href="/country/singapore" className="text-brand-primary hover:underline">Singapore</Link>,{' '}
-                <Link href="/country/japan" className="text-brand-primary hover:underline">Japan</Link>,{' '}
-                <Link href="/country/south-korea" className="text-brand-primary hover:underline">South Korea</Link>, and{' '}
-                <Link href="/country/malaysia" className="text-brand-primary hover:underline">Malaysia</Link>, each with unique requirements and benefits.
-              </p>
-
-              <p>
-                <strong>Latin America:</strong> Several countries in Central and South America offer accessible immigration pathways with lower
-                financial thresholds. Consider{' '}
-                <Link href="/country/chile" className="text-brand-primary hover:underline">Chile</Link>,{' '}
-                <Link href="/country/colombia" className="text-brand-primary hover:underline">Colombia</Link>,{' '}
-                <Link href="/country/argentina" className="text-brand-primary hover:underline">Argentina</Link>, and{' '}
-                <Link href="/country/brazil" className="text-brand-primary hover:underline">Brazil</Link> for entrepreneurial ventures or lifestyle migration.
-              </p>
-
-              <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Getting Started with Your Immigration Journey</h4>
-
-              <p>
-                Begin by using our <Link href="/path-finder" className="text-brand-primary hover:underline">Immigration Path Finder</Link> tool to
-                identify suitable pathways based on your current passport, desired destination, and immigration goals. Then, review the detailed{' '}
-                <Link href="/immigration-guides" className="text-brand-primary hover:underline">country guides</Link> to understand specific requirements,
-                timelines, and costs.
-              </p>
-
-              <p>
-                Our platform provides comprehensive information to help you make informed decisions, but always verify current requirements with
-                official government sources or licensed immigration professionals. Immigration policies change frequently, and individual circumstances
-                vary significantly. Visit our <Link href="/data-sources" className="text-brand-primary hover:underline">data sources page</Link> to
-                learn more about our research methodology and official reference materials.
+                All information on this platform is for research purposes. Immigration requirements change frequently and vary by individual circumstances. Always verify current rules with official government sources or a licensed immigration professional. See our <Link href="/data-sources" className="text-brand-primary hover:underline">data sources page</Link> for reference materials.
               </p>
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className="bg-gradient-to-r from-indigo-500 to-cyan-600 rounded-lg p-8 text-center text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Immigration Journey?</h3>
-            <p className="text-lg mb-6 text-indigo-50">
-              Use our tools to find the right pathway, calculate costs, and explore destination countries.
+          <div className="bg-gradient-to-r from-brand-primary to-cyan-600 rounded-lg p-8 text-center text-white">
+            <h3 className="text-2xl font-bold mb-4">Find the Right Route for Your Situation</h3>
+            <p className="text-lg mb-6 text-blue-50">
+              Use the Path Finder to match routes to your passport and destination, or browse the cost calculator to understand financial requirements before you apply.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -275,9 +222,9 @@ export default function SEOContentSection() {
               </Link>
               <Link
                 href="/immigration-cost-calculator"
-                className="bg-brand-primary text-white border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+                className="bg-brand-primary text-white border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
               >
-                Calculate Costs
+                Estimate Immigration Costs
               </Link>
             </div>
           </div>

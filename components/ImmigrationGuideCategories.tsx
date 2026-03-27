@@ -4,45 +4,45 @@ import { Briefcase, GraduationCap, Laptop, PiggyBank, DollarSign, Users, ArrowRi
 const categories = [
   {
     slug: 'work',
-    name: 'Work',
+    name: 'Work Visas',
     icon: Briefcase,
-    description: 'Employment visas, work permits, and skilled worker programs',
+    description: 'Employment-based work permits, employer-sponsored visas, and skilled worker programs. Many routes can lead to permanent residence after a qualifying period.',
     color: 'bg-blue-50 text-blue-700 border-blue-200',
   },
   {
     slug: 'study',
-    name: 'Study',
+    name: 'Study Permits',
     icon: GraduationCap,
-    description: 'Student visas and educational program requirements',
+    description: 'Student visas for university enrollment and language programs. Many countries offer post-study work permits as a bridge to employment-based residence.',
     color: 'bg-orange-50 text-orange-700 border-orange-200',
   },
   {
     slug: 'digital_nomad',
-    name: 'Digital Nomad',
+    name: 'Digital Nomad Visas',
     icon: Laptop,
-    description: 'Remote work visas and location-independent programs',
-    color: 'bg-purple-50 text-purple-700 border-purple-200',
+    description: 'Remote work authorization for location-independent professionals. These are typically temporary stay permits, not permanent residence routes.',
+    color: 'bg-teal-50 text-teal-700 border-teal-200',
   },
   {
     slug: 'retirement',
-    name: 'Retirement',
+    name: 'Retirement Visas',
     icon: PiggyBank,
-    description: 'Retirement visas and pensioner residence options',
+    description: 'Pensioner and passive income residence programs. Usually require proof of sufficient income and do not include local work authorization.',
     color: 'bg-amber-50 text-amber-700 border-amber-200',
   },
   {
     slug: 'investor',
-    name: 'Investor',
+    name: 'Investor Visas',
     icon: DollarSign,
-    description: 'Investment visas, golden visas, and entrepreneur programs',
-    color: 'bg-indigo-50 text-indigo-700 border-indigo-200',
+    description: 'Golden visas, investment-based residence, and entrepreneur programs. Many offer accelerated routes to permanent residence or citizenship.',
+    color: 'bg-green-50 text-green-700 border-green-200',
   },
   {
     slug: 'family',
-    name: 'Family',
+    name: 'Family Visas',
     icon: Users,
-    description: 'Family reunification and spouse visas',
-    color: 'bg-green-50 text-green-700 border-green-200',
+    description: 'Spouse visas, family reunification permits, and dependent residence. Often leads to independent permanent residence after a qualifying period.',
+    color: 'bg-rose-50 text-rose-700 border-rose-200',
   },
 ];
 
@@ -51,10 +51,10 @@ export default function ImmigrationGuideCategories() {
     <div className="mt-16">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          Immigration Guides by Category
+          Browse by Immigration Purpose
         </h2>
         <p className="text-gray-600">
-          Explore immigration pathways by your purpose of relocation
+          Each category covers a distinct legal basis for immigration. Routes differ in work rights, permanence, and family inclusion.
         </p>
       </div>
 
@@ -74,7 +74,7 @@ export default function ImmigrationGuideCategories() {
               <h3 className="text-lg font-semibold mb-2">
                 {category.name}
               </h3>
-              <p className="text-sm opacity-80">
+              <p className="text-sm opacity-80 leading-relaxed">
                 {category.description}
               </p>
             </Link>
@@ -85,9 +85,9 @@ export default function ImmigrationGuideCategories() {
       <div className="text-center mt-8">
         <Link
           href="/immigration-guides"
-          className="inline-flex items-center text-brand-primary hover:text-indigo-700 font-medium"
+          className="inline-flex items-center text-brand-primary hover:text-blue-700 font-medium"
         >
-          View All Guides
+          View All Country Guides
           <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </div>

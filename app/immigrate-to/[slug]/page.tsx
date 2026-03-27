@@ -55,14 +55,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `Immigrate to ${countryName} - Residency, Work Visas, and Pathways`,
-    description: `Explore immigration pathways, residency permits, work visas, and long-term stay options in ${countryName}. Find the right path for your move.`,
+    title: `How to Immigrate to ${countryName}: Visas, Permits & Residency Routes`,
+    description: `Research legal immigration pathways to ${countryName} including work permits, long-term residency, digital nomad visas, study permits, and permanent residence options. Eligibility, requirements, and processing overview.`,
     alternates: {
       canonical: `https://immigrationinfoguide.com/immigrate-to/${params.slug}`,
     },
     openGraph: {
-      title: `Immigrate to ${countryName} - Residency, Work Visas, and Pathways`,
-      description: `Explore immigration pathways, residency permits, work visas, and long-term stay options in ${countryName}. Find the right path for your move.`,
+      title: `How to Immigrate to ${countryName}: Visas, Permits & Residency Routes`,
+      description: `Research legal immigration pathways to ${countryName} including work permits, long-term residency, digital nomad visas, study permits, and permanent residence options.`,
       url: `https://immigrationinfoguide.com/immigrate-to/${params.slug}`,
       type: 'article',
     },
@@ -117,16 +117,24 @@ export default async function ImmigratePage({ params }: { params: { slug: string
 
   const faqSchema = buildFaqSchema([
     {
-      question: `What are the immigration pathways to ${countryData.name}?`,
-      answer: `${countryData.name} offers various immigration pathways including work visas, residency permits, digital nomad visas, study permits, retirement visas, and investor programs. Each pathway has specific requirements, processing times, and validity periods.`,
+      question: `What are the main legal immigration pathways to ${countryData.name}?`,
+      answer: `${countryData.name} typically offers several legal immigration routes including skilled worker and employment-based work permits, long-term residency permits, digital nomad or remote worker visas, student visas, retirement or passive income visas, investor and golden visa programs, and family reunification permits. Each pathway has distinct eligibility criteria, application processes, and rights granted. The available options depend on your nationality, qualifications, and immigration purpose.`,
     },
     {
-      question: `How can I find the right immigration pathway to ${countryData.name}?`,
-      answer: 'Use our Immigration Path Finder tool to discover personalized pathways based on your passport, destination, and goals. The tool filters options relevant to your situation and provides detailed information about requirements and application processes.',
+      question: `Can I get permanent residence or citizenship in ${countryData.name}?`,
+      answer: `Many immigration pathways to ${countryData.name} begin with temporary residence and can lead to permanent residence after a qualifying period — typically two to five years of continuous legal residence, depending on the route and country-specific rules. Citizenship is a separate process that usually requires a longer period of prior permanent residence, language proficiency, and other integration criteria. Not all immigration routes lead to permanent residence; some, such as digital nomad visas and retirement visas, may only authorize temporary stay without a direct pathway to permanent settlement.`,
     },
     {
-      question: `Do I need a visa to enter ${countryData.name}?`,
-      answer: `Visa requirements depend on your nationality. Check visa entry requirements for ${countryData.name} on VisaInfoGuide.com to see if you need a tourist or business visa before planning your long-term relocation.`,
+      question: `Do I need a visa before entering ${countryData.name}?`,
+      answer: `Entry visa requirements depend on your nationality. Some passport holders may enter ${countryData.name} visa-free for short stays, while others require a tourist or short-stay visa before arrival. Entry authorization for a short stay is separate from a long-term residence permit. Check tourist and short-stay visa requirements for ${countryData.name} on VisaInfoGuide.com before planning an initial visit or scouting trip.`,
+    },
+    {
+      question: `Can I work in ${countryData.name} on a temporary residence permit?`,
+      answer: `Work authorization rights vary significantly by permit type. A work permit or employment-based visa typically authorizes both residence and employment. A digital nomad visa usually permits residence but only for remote work for foreign employers — not local employment. Retirement and passive income visas generally do not include local work rights. Student visas may allow limited part-time work. Always check the specific work conditions attached to your chosen permit category before applying.`,
+    },
+    {
+      question: `What documents are typically required for immigration applications to ${countryData.name}?`,
+      answer: `Most immigration applications to ${countryData.name} require a valid passport, completed application forms, proof of the purpose of stay (employment contract, enrollment letter, proof of income), recent bank statements or proof of financial sufficiency, medical examination results, police clearance certificates from countries where you have lived, and passport-sized photographs. Specific document requirements vary by pathway type and individual circumstances. Translations and notarizations are often required for documents in foreign languages.`,
     },
   ]);
 
@@ -153,37 +161,33 @@ export default async function ImmigratePage({ params }: { params: { slug: string
         <div className="flex items-center space-x-3 mb-4">
           <Globe className="h-10 w-10 text-brand-primary" />
           <h1 className="text-4xl font-bold text-gray-900">
-            Immigrate to {countryData.name}
+            How to Immigrate to {countryData.name}
           </h1>
         </div>
 
-        <p className="text-xl text-gray-600 mb-8">
-          Explore legal pathways for long-term residence, work, and citizenship.
+        <p className="text-xl text-gray-600 mb-3">
+          Legal pathways for work authorization, long-term residence, and permanent settlement.
         </p>
-
-        <div className="bg-gray-50 rounded-lg p-4 mb-8">
-          <p className="text-sm text-gray-600">
-            Region: <span className="font-medium text-gray-900">{countryData.region}</span>
-          </p>
-        </div>
+        <p className="text-sm text-gray-500 mb-8">
+          Region: <span className="font-medium text-gray-700">{countryData.region}</span>
+        </p>
 
         <div className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Overview
+            Immigration Overview
           </h2>
           <p className="text-gray-700 mb-4">
             {countryGuide ? countryGuide.overview :
-              `${countryData.name} offers various immigration pathways for individuals looking to relocate for work,
-              study, retirement, or investment purposes. Each pathway has specific requirements, processing
-              times, and validity periods.`}
+              `${countryData.name} offers legal immigration pathways for individuals seeking to relocate for work, study, retirement, or investment purposes. Each pathway grants different rights and has specific eligibility criteria, required documents, processing timelines, and validity periods.`}
           </p>
-          <p className="text-gray-700">
-            Below you'll find the available immigration pathways, their requirements, and key information
-            to help you determine which option best suits your situation.
+          <p className="text-gray-700 mb-4">
+            Before selecting a pathway, it is important to understand whether the route grants temporary residence only, leads to permanent residence after a qualifying period, or is structured differently. Work authorization rights, family inclusion rules, and renewal conditions also vary by permit type.
           </p>
-          <p className="text-sm text-amber-700 mt-4 font-medium">
-            Always verify requirements via official government sources. This is not legal advice.
-          </p>
+          <div className="bg-amber-50 border border-amber-200 rounded-md p-4 mt-4">
+            <p className="text-sm text-amber-800 font-medium">
+              This is a research reference only. Always verify current requirements with the official immigration authority of {countryData.name}. This is not legal advice.
+            </p>
+          </div>
         </div>
 
         <VisaEntryNotice countryName={countryData?.name} variantIndex={0} />
@@ -490,6 +494,63 @@ export default async function ImmigratePage({ params }: { params: { slug: string
               Check entry visa requirements on VisaInfoGuide.com
               <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
             </a>
+          </div>
+        </div>
+
+        <div className="border-t pt-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Frequently Asked Questions: Immigrating to {countryData.name}
+          </h2>
+          <div className="space-y-6">
+            {[
+              {
+                question: `What are the main legal immigration pathways to ${countryData.name}?`,
+                answer: `${countryData.name} typically offers work permits and skilled worker visas, long-term residency permits, digital nomad or remote worker authorizations, student visas, retirement or passive income visas, investor programs, and family reunification routes. Each route grants different rights and has distinct eligibility criteria. Use the pathway explorer above to review the specific options available.`,
+              },
+              {
+                question: `Can I get permanent residence or citizenship in ${countryData.name}?`,
+                answer: `Many immigration pathways begin with temporary residence and may lead to permanent residence after a qualifying period — typically two to five years of continuous legal stay, depending on the specific route. Citizenship is a separate application process requiring its own criteria, including language requirements and a longer period of prior residence. Not all routes lead to permanent residence; digital nomad visas and most retirement visas are typically temporary stays only.`,
+              },
+              {
+                question: `Can I work in ${countryData.name} on a temporary residence permit?`,
+                answer: `Work authorization depends on your permit type. A work permit or employment visa authorizes both residence and employment. A digital nomad visa authorizes residence but typically only for remote work for foreign clients — not local employment. Retirement and passive income visas generally prohibit local work. Student visas may allow part-time work in specific circumstances. Always confirm work conditions before applying.`,
+              },
+              {
+                question: `Can family members accompany me when I immigrate to ${countryData.name}?`,
+                answer: `Most long-term immigration routes allow a principal applicant's spouse and dependent children to apply as dependents. Dependent permits typically mirror the principal applicant's rights and validity period, though work authorization for dependents varies by country and permit type. Family reunification visas are a separate category for bringing family members already living abroad to join a settled resident.`,
+              },
+              {
+                question: `What documents are typically required for immigration to ${countryData.name}?`,
+                answer: `Common documentation includes a valid passport, proof of purpose of stay (employment contract, enrollment letter, or proof of income), recent bank statements demonstrating financial sufficiency, medical examination results from an approved physician, police clearance certificates, and passport photographs. Translation and notarization of foreign-language documents is usually required. Exact requirements vary by pathway type and individual circumstances.`,
+              },
+            ].map((faq, index) => (
+              <div key={index} className="border-l-4 border-brand-primary pl-4">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-700">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 mb-8">
+          <h3 className="font-semibold text-gray-900 mb-3">Next Steps</h3>
+          <p className="text-sm text-gray-700 mb-4">
+            This page provides a research overview of immigration pathways to {countryData.name}. Use the tools above to explore specific routes, estimate costs, and compare this destination against others. Always confirm current requirements directly with the official immigration authority before submitting an application.
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <Link href={`/immigration-cost/${params.slug}`} className="text-brand-primary hover:underline font-medium">
+              View immigration costs for {countryData.name}
+            </Link>
+            <Link href={`/country/${params.slug}`} className="text-brand-primary hover:underline font-medium">
+              Read the {countryData.name} settlement guide
+            </Link>
+            <Link href="/immigration-guides" className="text-brand-primary hover:underline font-medium">
+              Browse all country guides
+            </Link>
           </div>
         </div>
 

@@ -9,22 +9,22 @@ import BlogSection from '@/components/BlogSection';
 import BrandPushTrustBadge from '@/components/BrandPushTrustBadge';
 
 export const metadata = {
-  title: 'ImmigrationInfoGuide.com | Immigration Pathways & Guides',
-  description: 'Immigration pathway finder, cost calculator, and guides for 52 countries. Find work visas, digital nomad visas, retirement options, and study permits worldwide.',
+  title: 'ImmigrationInfoGuide.com | Immigration Pathways, Guides & Cost Calculator',
+  description: 'Research legal immigration pathways for 52 countries. Work visas, digital nomad programs, retirement visas, permanent residence routes, and immigration cost estimates — all in one place.',
   alternates: {
     canonical: 'https://immigrationinfoguide.com',
   },
   openGraph: {
-    title: 'ImmigrationInfoGuide.com - Immigration Pathways & Resources',
-    description: 'Find legal pathways for long-term stay: work, study, digital nomad, retirement, and investment options for 52+ countries.',
+    title: 'ImmigrationInfoGuide.com — Immigration Pathways & Country Guides',
+    description: 'Compare legal pathways for long-term stay: work permits, digital nomad visas, study permits, retirement programs, and permanent residence routes across 52 countries.',
     type: 'website',
     url: 'https://immigrationinfoguide.com',
     images: [{ url: '/og-image.webp', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ImmigrationInfoGuide.com - Immigration Pathways & Resources',
-    description: 'Find legal pathways for long-term stay: work, study, digital nomad, retirement, and investment options for 52+ countries.',
+    title: 'ImmigrationInfoGuide.com — Immigration Pathways & Country Guides',
+    description: 'Compare legal pathways for long-term stay: work permits, digital nomad visas, study permits, retirement programs, and permanent residence routes across 52 countries.',
     images: ['/og-image.webp'],
   },
 };
@@ -40,8 +40,11 @@ export default function Home() {
             <span className="text-gray-900">Guide.com</span>
           </span>
         </h1>
-        <p className="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
-          Explore legal pathways for long-term stay: work, study, digital nomad, retirement, and investment
+        <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+          Research legal immigration pathways for 52 countries — work visas, permanent residence, digital nomad programs, retirement visas, and more.
+        </p>
+        <p className="text-base text-gray-500 mb-12 max-w-2xl mx-auto">
+          Compare routes by eligibility, cost, and long-term settlement potential. Not legal advice — a research starting point.
         </p>
 
         <div className="mx-auto max-w-3xl">
@@ -49,7 +52,7 @@ export default function Home() {
         </div>
 
         <p className="text-sm text-gray-500 mt-8 mb-8">
-          Informational only. Verify with official government sources.
+          For informational purposes only. Always verify current requirements with official government sources.
         </p>
 
         <div className="mx-auto max-w-3xl mb-4">

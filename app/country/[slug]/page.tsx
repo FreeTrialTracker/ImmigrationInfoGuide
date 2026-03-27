@@ -30,14 +30,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const countryName = (data as any)?.countries?.name || 'Country';
 
   return {
-    title: `Living in ${countryName}: Immigrant's Relocation & Settlement Guide`,
-    description: `Planning to settle in ${countryName}? Explore cost of living, employment, healthcare, language requirements, lifestyle, and long-term immigration environment.`,
+    title: `Living in ${countryName}: Settlement Guide for Immigrants`,
+    description: `What to expect after immigrating to ${countryName}. Covers cost of living, employment market, healthcare access, language requirements, education system, and practical settlement conditions for long-term residents.`,
     alternates: {
       canonical: `https://immigrationinfoguide.com/country/${params.slug}`,
     },
     openGraph: {
-      title: `Living in ${countryName}: Immigrant's Relocation & Settlement Guide`,
-      description: `Planning to settle in ${countryName}? Explore cost of living, employment, healthcare, language requirements, lifestyle, and long-term immigration environment.`,
+      title: `Living in ${countryName}: Settlement Guide for Immigrants`,
+      description: `What to expect after immigrating to ${countryName}. Cost of living, employment, healthcare, language requirements, and practical settlement conditions.`,
       url: `https://immigrationinfoguide.com/country/${params.slug}`,
       type: 'article',
     },
@@ -80,20 +80,28 @@ export default async function CountryPage({ params }: { params: { slug: string }
 
   const countryFAQs = [
     {
-      question: `What are the main visa types for immigrating to ${guide.countries.name}?`,
-      answer: `${guide.countries.name} offers various immigration pathways including work visas for skilled professionals, study permits for international students, family reunification visas, business and investor visas, and retirement options. Each pathway has specific requirements for eligibility, documentation, and processing times. Visit our Path Finder tool to explore pathways that match your situation.`,
+      question: `What are the main immigration pathways to ${guide.countries.name}?`,
+      answer: `${guide.countries.name} offers several legal immigration routes for foreign nationals. Common pathways include employment-based work permits, long-term residency programs, digital nomad or remote worker visas, student visas with post-study work options, retirement and passive income visas, investor or golden visa programs, and family reunification routes. Each route has different eligibility criteria, rights, and permanence. For a full breakdown, see the immigration pathways page for ${guide.countries.name}.`,
     },
     {
-      question: `How much does it cost to live in ${guide.countries.name}?`,
-      answer: guide.cost_of_living || `The cost of living in ${guide.countries.name} varies by city and lifestyle. Major urban centers typically have higher costs for housing and daily expenses. Research specific cities and budget for housing, food, transportation, healthcare, and other living expenses based on your intended location.`,
+      question: `What is the cost of living like in ${guide.countries.name} for immigrants?`,
+      answer: guide.cost_of_living || `The cost of living in ${guide.countries.name} varies significantly by city and lifestyle choices. Major urban centers typically have higher housing, transport, and daily living costs compared to smaller cities or rural areas. Budget planning should account for accommodation, food, local transport, utilities, healthcare (whether public or private access), and miscellaneous expenses. Cost of living is also a key factor in meeting proof-of-funds requirements for many residency applications.`,
     },
     {
-      question: `Do I need to speak the local language to immigrate to ${guide.countries.name}?`,
-      answer: guide.language_requirements || `Language requirements for ${guide.countries.name} depend on your immigration pathway. Some visa types require proof of language proficiency, while others may not. Work visas often require business-level language skills, while student visas depend on the program's language of instruction. Check specific requirements for your intended visa category.`,
+      question: `Is language ability required to immigrate to ${guide.countries.name}?`,
+      answer: guide.language_requirements || `Language requirements in ${guide.countries.name} depend on the specific immigration pathway. Work permits in some sectors require demonstrated proficiency in the local language. Student visas depend on the program's language of instruction. Integration programs and citizenship applications often require formal language certification. Some pathways, particularly investor and digital nomad visas, may not require local language ability. Check the requirements for your specific route before applying.`,
     },
     {
-      question: `What is the job market like in ${guide.countries.name}?`,
-      answer: guide.employment_opportunities || `Employment opportunities in ${guide.countries.name} vary by industry and region. Research in-demand occupations, average salaries in your field, and work permit requirements. Some sectors may have labor shortages offering better prospects for foreign workers. Consider working with recruitment agencies specializing in your industry.`,
+      question: `What employment opportunities exist for immigrants in ${guide.countries.name}?`,
+      answer: guide.employment_opportunities || `Employment opportunities for immigrants in ${guide.countries.name} vary by industry, qualification level, and region. Research which sectors have skilled worker shortages and active international recruitment. Work permit eligibility is often linked to qualifying occupations or employer sponsorship. For some routes, a formal job offer is a prerequisite for the visa application.`,
+    },
+    {
+      question: `How does the healthcare system work for immigrants in ${guide.countries.name}?`,
+      answer: guide.healthcare_system || `Healthcare access for immigrants in ${guide.countries.name} depends on your residence status and the type of permit you hold. Permanent residents and work permit holders typically access the public healthcare system. Temporary residents or those on visitor-type visas may need private health insurance. Understanding healthcare access and costs is important for both financial planning and immigration eligibility, as some pathways require proof of health coverage.`,
+    },
+    {
+      question: `Does settling in ${guide.countries.name} eventually lead to citizenship?`,
+      answer: `Citizenship eligibility in ${guide.countries.name} typically requires several years of prior legal residence — often as a permanent resident — plus demonstrated language ability, integration, and good standing. The path from initial visa to citizenship usually involves: initial temporary permit, renewal or upgrade to long-term residency, qualification for permanent residence, and then after a further qualifying period, citizenship application. Timelines and requirements vary by immigration route and individual circumstances.`,
     },
   ];
 
@@ -137,17 +145,23 @@ export default async function CountryPage({ params }: { params: { slug: string }
         <div className="flex items-center space-x-3 mb-2">
           <Globe className="h-8 w-8 text-brand-primary" />
           <h1 className="text-3xl font-bold text-gray-900">
-            Living in {guide.countries.name}: Relocation Guide
+            Living in {guide.countries.name}: Settlement Guide for Immigrants
           </h1>
         </div>
 
-        <p className="text-sm text-gray-500 mb-8">{guide.countries.region}</p>
+        <p className="text-sm text-gray-500 mb-2">{guide.countries.region}</p>
+        <p className="text-sm text-gray-500 mb-8">
+          This guide covers practical settlement conditions — not immigration eligibility. For visa requirements and legal pathways, see the{' '}
+          <Link href={`/immigrate-to/${params.slug}`} className="text-brand-primary hover:underline">
+            {guide.countries.name} immigration pathways page
+          </Link>.
+        </p>
 
         <div className="prose max-w-none mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Settling in {guide.countries.name}</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What to Expect After Immigrating to {guide.countries.name}</h2>
           <p className="text-gray-700 leading-relaxed">{guide.overview}</p>
           <p className="text-gray-700 leading-relaxed mt-3">
-            This guide covers what life is actually like once you arrive — cost of living, job markets, healthcare, education, and the cultural context you need to plan a successful long-term relocation to {guide.countries.name}.
+            This guide covers the practical aspects of life after arrival — cost of living, employment market conditions, healthcare access, language environment, education system, and the climate and lifestyle factors that shape long-term settlement in {guide.countries.name}.
           </p>
         </div>
 
@@ -168,6 +182,12 @@ export default async function CountryPage({ params }: { params: { slug: string }
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Immigrants Choose {guide.countries.name}</h2>
           <p className="text-gray-700 leading-relaxed">{guide.why_immigrate}</p>
+          <p className="text-sm text-gray-500 mt-3">
+            For the legal routes that enable you to live here long-term, see the{' '}
+            <Link href={`/immigrate-to/${params.slug}`} className="text-brand-primary hover:underline">
+              full immigration pathways guide for {guide.countries.name}
+            </Link>.
+          </p>
         </div>
 
         {popularPathways && popularPathways.length > 0 && (
@@ -351,11 +371,11 @@ export default async function CountryPage({ params }: { params: { slug: string }
 
         <div className="border-t pt-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
+            Frequently Asked Questions: Settling in {guide.countries.name}
           </h2>
           <div className="space-y-6">
             {countryFAQs.map((faq, index) => (
-              <div key={index} className="border-l-4 border-indigo-500 pl-4">
+              <div key={index} className="border-l-4 border-brand-primary pl-4">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {faq.question}
                 </h3>
@@ -364,6 +384,24 @@ export default async function CountryPage({ params }: { params: { slug: string }
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 mb-8">
+          <h3 className="font-semibold text-gray-900 mb-3">Related: Immigration Pathways for {guide.countries.name}</h3>
+          <p className="text-sm text-gray-700 mb-4">
+            This settlement guide covers what life is like once you arrive. For the legal routes that allow you to move and stay here, including eligibility, documentation, and processing overview, see the dedicated immigration hub.
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <Link href={`/immigrate-to/${params.slug}`} className="text-brand-primary hover:underline font-medium">
+              Immigration pathways to {guide.countries.name}
+            </Link>
+            <Link href={`/immigration-cost/${params.slug}`} className="text-brand-primary hover:underline font-medium">
+              Immigration cost estimates for {guide.countries.name}
+            </Link>
+            <Link href="/immigration-guides" className="text-brand-primary hover:underline font-medium">
+              All country immigration guides
+            </Link>
           </div>
         </div>
 

@@ -3,20 +3,20 @@ import { Search, FileText, CircleCheck as CheckCircle } from 'lucide-react';
 const STEPS = [
   {
     number: '1',
-    title: 'Pick passport + destination',
-    description: 'Select your citizenship and where you want to relocate.',
+    title: 'Choose your passport and destination',
+    description: 'Select your citizenship country and where you want to legally relocate. This determines which pathways are available to you and which routes are most accessible.',
     icon: Search,
   },
   {
     number: '2',
-    title: 'Review common pathways',
-    description: 'Explore available immigration options and requirements.',
+    title: 'Review available pathways and requirements',
+    description: 'Explore immigration routes by goal: work, study, digital nomad, retirement, investment, or family. Compare whether each route leads to temporary stay, permanent residence, or citizenship eligibility.',
     icon: FileText,
   },
   {
     number: '3',
-    title: 'Verify via official sources',
-    description: 'Confirm details with government websites and plan next steps.',
+    title: 'Verify with official government sources',
+    description: 'All pathway information should be confirmed with the official immigration authority of your destination country. Requirements change frequently. Never rely on a single source when making an immigration decision.',
     icon: CheckCircle,
   },
 ];
@@ -26,10 +26,10 @@ export default function HowItWorks() {
     <div className="py-10 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-          How It Works
+          How to Use This Platform
         </h2>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Find immigration pathways in three simple steps.
+          Research immigration pathways in three focused steps. This platform helps you understand your options — not replace professional legal advice.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -40,7 +40,7 @@ export default function HowItWorks() {
                 <div className="bg-white rounded-lg border border-gray-200 p-6 h-full">
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center">
                         <span className="text-xl font-bold text-brand-primary">
                           {step.number}
                         </span>
@@ -50,20 +50,20 @@ export default function HowItWorks() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 leading-relaxed">
                         {step.description}
                       </p>
                     </div>
                   </div>
                   <div className="mt-4 flex justify-center">
-                    <Icon className="h-12 w-12 text-gray-300" />
+                    <Icon className="h-12 w-12 text-gray-200" />
                   </div>
                 </div>
 
                 {index < STEPS.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
                     <svg
-                      className="h-8 w-8 text-indigo-400"
+                      className="h-8 w-8 text-gray-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
