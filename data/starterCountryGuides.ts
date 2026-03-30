@@ -1,833 +1,971 @@
+// Last fact-checked: March 30, 2026
+// Sources: Thai BOI (ltr.boi.go.th), AIMA Portugal, IRCC Canada, UK Home Office,
+// German Make-it-in-Germany portal, Henley & Partners, official government immigration portals.
+// Always verify with official immigration authorities before advising clients.
+
 export interface StarterCountryGuide {
   destination_slug: string;
   overview: string;
   common_pathways: string[];
   typical_documents: string[];
   common_pitfalls: string[];
+  last_verified: string; // ISO date — used by search engines for freshness signals
 }
 
 export const starterCountryGuides: StarterCountryGuide[] = [
   {
     destination_slug: "thailand",
-    overview: "Thailand offers various immigration pathways for workers, students, retirees, and digital nomads. The country has streamlined processes for long-term stays through the LTR program. Always verify current requirements with Thai immigration authorities.",
+    // KEY 2026 CHANGES:
+    // - LTR now grants annual reporting (not 90-day) — confirmed by Thai BOI official site
+    // - LTR Wealthy Global Citizen: USD 80k/yr income requirement REMOVED Feb 2025
+    // - LTR Wealthy Pensioner: USD 80k/yr passive income (salary excluded); or USD 40k + USD 250k Thai investment
+    // - LTR Work-from-Thailand Professionals: USD 80k/yr avg over last 2 years
+    // - DTV (Destination Thailand Visa) added as digital nomad option — replaced informal "Tourist + work" gray area
+    // - 90-day reporting still applies to non-LTR holders
+    last_verified: "2026-03-30",
+    overview:
+      "Thailand offers multiple immigration pathways for workers, students, retirees, and remote professionals. The flagship Long-Term Resident (LTR) Visa — managed by the Board of Investment (BOI), not standard embassies — grants a 10-year stay (two 5-year terms), annual address reporting instead of 90-day check-ins, multiple re-entries, and family inclusion. As of February 2025, the USD 80,000/year personal income requirement was removed for the Wealthy Global Citizen category. The Destination Thailand Visa (DTV) is the current pathway for lower-income digital nomads. Always verify the latest thresholds at ltr.boi.go.th.",
     common_pathways: [
-      "Non-Immigrant B Visa for employment",
-      "Long-Term Resident (LTR) Visa for remote workers and wealthy retirees",
-      "Non-Immigrant O-A Visa for retirees 50+",
+      "Non-Immigrant B Visa for employment (employer-sponsored, 1 year, renewable)",
+      "Long-Term Resident (LTR) Visa — Wealthy Global Citizen: USD 1M+ in global assets or USD 500k Thai investment",
+      "LTR Visa — Wealthy Pensioner: 50+, USD 80k/yr passive income (or USD 40k + USD 250k Thai investment)",
+      "LTR Visa — Work-from-Thailand Professional: remote worker, USD 80k/yr avg income over 2 years",
+      "LTR Visa — Highly Skilled Professional: expert in BOI-targeted industry",
+      "Destination Thailand Visa (DTV): 5-year multi-entry for remote workers/digital nomads below LTR income thresholds",
+      "Non-Immigrant O-A Visa for retirees 50+ (annual, non-LTR route)",
       "Non-Immigrant ED Visa for students",
-      "Investment-based visas for business owners"
     ],
     typical_documents: [
       "Valid passport with at least 6 months validity",
-      "Completed visa application forms",
+      "Completed visa application forms (BOI online portal for LTR)",
       "Recent passport-sized photographs",
-      "Proof of financial means (bank statements, income proof)",
+      "Proof of financial means: bank statements, income proof, or asset documentation meeting category thresholds",
+      "Health insurance covering Thailand with minimum USD 50,000 medical coverage (or USD 100,000 bank deposit held 12+ months)",
       "Criminal background check from home country",
-      "Medical certificate",
-      "Health insurance coverage",
-      "Supporting documents specific to visa type (employment contract, acceptance letter, etc.)"
+      "Medical certificate (some visa types)",
+      "Supporting documents specific to visa type (employment contract, acceptance letter, asset proof, etc.)",
     ],
     common_pitfalls: [
-      "Insufficient financial documentation",
+      "Confusing LTR Wealthy Global Citizen requirements: the USD 80k/yr income threshold was removed in Feb 2025 — only USD 1M in global assets (or USD 500k Thai investment) is now required",
+      "Applying for LTR through a Thai embassy instead of the BOI — the correct channel is the BOI online portal or Bangkok BOI office",
+      "Insufficient financial documentation or assets not yet transferred/registered before applying",
       "Expired passport or insufficient validity period",
-      "Missing health insurance coverage",
-      "Not allowing enough processing time before intended travel",
-      "Confusing tourist visas with long-term residence options",
-      "Failing to maintain 90-day reporting requirements"
-    ]
+      "Missing health insurance with the minimum USD 50,000 coverage (or not having the USD 100,000 bank deposit alternative)",
+      "Confusing tourist visas or the DTV with the LTR — they have very different rights and income thresholds",
+      "Non-LTR holders failing to maintain 90-day reporting (LTR holders report annually)",
+      "Not factoring in the 3,000 THB/year work permit fee for LTR holders who work in Thailand",
+    ],
   },
   {
     destination_slug: "portugal",
-    overview: "Portugal has become increasingly popular for immigration, offering pathways through work, study, retirement (D7 visa), digital nomad visas, and the Golden Visa program. The country provides a clear path to permanent residence and citizenship. Verify requirements with Portuguese immigration services.",
+    // KEY 2026 CHANGES:
+    // - Minimum wage rose to €920/month Jan 2026, so D7 minimum passive income = €920/month (was €870)
+    // - D8 Digital Nomad income threshold = €3,680/month (4x minimum wage)
+    // - AIMA (replaced SEF) still has significant backlogs — 6–12 months common
+    // - Real estate Golden Visa route closed 2023; only fund/research/cultural investment ≥ €500k remain
+    // - Citizenship timeline changes proposed (5 → 10 yrs) but Constitutional Court review ongoing as of March 2026
+    // - D7 still requires passive income; D8 is now the correct route for remote workers/freelancers
+    last_verified: "2026-03-30",
+    overview:
+      "Portugal remains one of Europe's most popular immigration destinations in 2026. The D7 Passive Income Visa requires a minimum of €920/month (indexed to Portugal's minimum wage, updated January 2026). The D8 Digital Nomad Visa, introduced in 2023, is now the correct route for remote workers and freelancers, requiring €3,680/month. AIMA (Agência para a Integração, Migrações e Asilo) replaced the former SEF and manages residence permits — backlogs of 6–12 months remain common. The Golden Visa real estate route closed in 2023; qualifying investments now start at €500,000 in funds. Proposed changes to the citizenship timeline (from 5 to 10 years) are under Constitutional Court review and are not yet in force as of March 2026. Verify requirements with AIMA at aima.gov.pt.",
     common_pathways: [
-      "D7 Visa for passive income holders and retirees",
-      "D8 Digital Nomad Visa for remote workers",
-      "Golden Visa for investors",
-      "Work Visa (D1) for employment",
+      "D7 Visa for passive income holders and retirees (€920/month minimum in 2026)",
+      "D8 Digital Nomad Visa for remote workers and freelancers (€3,680/month in 2026)",
+      "Golden Visa for investors (fund/research/cultural investment from €500k; real estate route closed since 2023)",
+      "Work Visa (D1) for employment by a Portuguese employer",
       "Student Visa (D4) for education",
-      "Family reunification for family members"
+      "Family reunification for family members of legal residents",
     ],
     typical_documents: [
       "Valid passport",
-      "Criminal record certificate from home country and countries resided in last year",
-      "Proof of accommodation in Portugal",
-      "Proof of financial means (varies by visa type)",
-      "Health insurance covering Portugal",
-      "Completed visa application forms",
-      "Biometric data collection",
-      "Specific documents per visa category"
+      "Criminal record certificate from home country and any country resided in during the last year",
+      "Proof of accommodation in Portugal (minimum 12-month rental contract or property ownership)",
+      "Proof of financial means: for D7, €920/month min; for D8, €3,680/month min (2026 figures — verified at AIMA appointment date, not application date)",
+      "Health insurance covering Portugal (some consulates now require 12 months coverage)",
+      "Completed national long-stay visa application form",
+      "NIF (Portuguese tax number — obtain before applying)",
+      "Portuguese bank account with sufficient balance",
+      "Biometric data collection (at AIMA appointment)",
+      "Category-specific documents (e.g., proof of pension, employer letter, enrollment letter)",
     ],
     common_pitfalls: [
-      "Inadequate proof of passive income for D7 visa",
-      "Not apostilling documents properly",
-      "Missing criminal record certificates from all relevant countries",
-      "Insufficient health insurance coverage",
-      "Not scheduling appointments early enough",
-      "Underestimating processing times (2-3 months typical)"
-    ]
+      "Using 2025 income figures (€870/month) — AIMA assesses D7 financial means at the minimum wage in force at your appointment date, which is €920/month in 2026",
+      "Applying for D7 with active remote work or freelance income — the D8 is now the correct visa; D7 requires genuinely passive income (pensions, rent, dividends, interest)",
+      "Not apostilling documents correctly or missing criminal record certificates from all relevant countries",
+      "Insufficient health insurance coverage — some consulates now require 12 months, not just the initial stay",
+      "Not scheduling AIMA appointments early enough — 6–12 month backlogs are common",
+      "Not obtaining a NIF and opening a Portuguese bank account before the visa stage",
+      "Expecting the Golden Visa to be available via real estate — that route closed in 2023",
+      "Misunderstanding citizenship timeline: proposed extension to 10 years is under Constitutional Court review and not yet in force",
+    ],
   },
   {
     destination_slug: "germany",
-    overview: "Germany offers structured immigration pathways for skilled workers, students, freelancers, and entrepreneurs. The EU Blue Card is popular for highly qualified workers. Language requirements may apply for some visa categories. Consult German immigration authorities for current requirements.",
+    // KEY 2026 CHANGES:
+    // - EU Blue Card minimum salary: €50,700/year general (from Jan 1 2026)
+    // - EU Blue Card shortage occupations (IT, engineering, STEM, healthcare): €45,934.20/year
+    // - IT professionals without university degree now eligible for Blue Card with 3 yrs experience
+    // - Skilled Immigration Act (2023) expanded pathways for non-EU nationals
+    last_verified: "2026-03-30",
+    overview:
+      "Germany offers structured immigration pathways for skilled workers, students, freelancers, and entrepreneurs. The EU Blue Card — the primary route for highly qualified non-EU nationals — requires a minimum salary of €50,700/year gross as of January 1, 2026 (€45,934.20/year for shortage occupations including IT, engineering, STEM, and healthcare). A landmark reform now allows IT professionals without a university degree to qualify for the Blue Card if they have 3+ years of relevant experience. Language requirements apply to some visa categories. Consult the official portal make-it-in-germany.com for current requirements.",
     common_pathways: [
-      "EU Blue Card for highly qualified workers",
-      "Work Visa for employed professionals",
+      "EU Blue Card for highly qualified workers (€50,700/yr general; €45,934.20/yr shortage occupations in 2026)",
+      "EU Blue Card for IT specialists without a university degree (3+ yrs experience, €45,934.20/yr salary)",
+      "Skilled Worker Visa (Fachkräftevisa) for employed professionals with recognized qualifications",
+      "Job Seeker Visa for finding employment (6 months, non-renewable, no work rights)",
+      "Freelance Visa (Freiberufler) for self-employed professionals",
       "Student Visa for university studies",
-      "Freelance Visa for self-employed professionals",
-      "Job Seeker Visa for finding employment",
-      "Family reunification visas"
+      "Family reunification visas",
     ],
     typical_documents: [
       "Valid passport",
       "Completed visa application forms",
       "Biometric passport photos",
-      "Proof of health insurance (coverage in Germany)",
-      "Proof of financial means or employment",
-      "Educational certificates (with translations)",
+      "Proof of health insurance (must cover Germany)",
+      "Proof of financial means or employment contract with salary meeting Blue Card threshold",
+      "Educational certificates with German-recognized translations (check ANABIN database for recognition status)",
       "Employment contract or admission letter",
       "Proof of accommodation",
-      "German language proficiency (for certain visas)"
+      "German language proficiency certificate (required for some visa categories, not all)",
     ],
     common_pitfalls: [
-      "Not booking visa appointments early (can have long wait times)",
-      "Missing document translations and certifications",
-      "Inadequate health insurance coverage",
-      "Not meeting minimum salary requirements for EU Blue Card",
-      "Insufficient German language skills where required",
-      "Incomplete business plans for freelance/entrepreneur visas"
-    ]
+      "Not booking visa appointments early — German consulates can have wait times of several months",
+      "Missing document translations and certifications — all foreign documents must be officially translated",
+      "Not checking ANABIN database for degree recognition before applying — unrecognized degrees can delay or block Blue Card applications",
+      "Salary offer below 2026 EU Blue Card thresholds: €50,700/yr general, €45,934.20/yr for shortage occupations",
+      "IT professionals without a degree not knowing they may now qualify via the 3-year experience route",
+      "Inadequate health insurance coverage for Germany",
+      "Incomplete business plans for freelance/entrepreneur visa applications",
+    ],
   },
   {
     destination_slug: "spain",
-    overview: "Spain offers diverse immigration options including work visas, the popular non-lucrative visa for retirees, a digital nomad visa, and the Golden Visa program. Processing times vary by visa type and consulate. Always verify with Spanish immigration authorities.",
+    // KEY 2026 CHANGES:
+    // - Spain announced closure of its Golden Visa (real estate) program in 2024/2025
+    //   (still processing existing applications but no new real-estate-based applications)
+    // - Digital Nomad Visa income threshold: €2,646/month (200% of Spanish minimum wage) in 2026
+    // - Non-Lucrative Visa income requirement also tied to IPREM, updated annually
+    last_verified: "2026-03-30",
+    overview:
+      "Spain offers diverse immigration options in 2026 including the Non-Lucrative Visa (for passive income holders and retirees), the Digital Nomad Visa for remote workers, work and student visas, and the Entrepreneur Visa. Important: Spain announced the closure of its Golden Visa real estate route in 2025 — new real-estate-based applications are no longer accepted. Always verify current income thresholds and program status with Spanish consulates or the Secretaría de Estado de Migraciones.",
     common_pathways: [
-      "Non-Lucrative Visa for retirees and passive income holders",
-      "Digital Nomad Visa for remote workers",
-      "Golden Visa for investors",
-      "Work and Residence Visa for employment",
+      "Non-Lucrative Visa for retirees and passive income holders (no work rights)",
+      "Digital Nomad Visa for remote workers earning at least €2,646/month (2026 figure)",
+      "Golden Visa for investors — real estate route CLOSED; financial asset routes may still apply (verify current status)",
+      "Work and Residence Visa (cuenta ajena) for employment with a Spanish employer",
       "Student Visa for education",
-      "Entrepreneur Visa for business owners"
+      "Entrepreneur Visa for business founders",
     ],
     typical_documents: [
       "Valid passport with copies",
-      "Criminal record certificate (apostilled)",
-      "Medical certificate",
-      "Proof of financial means",
-      "Health insurance with coverage in Spain",
-      "Proof of accommodation",
-      "Completed visa application forms",
-      "Biometric data",
-      "Category-specific documents"
+      "Criminal record certificate (apostilled and translated)",
+      "Medical certificate (apostilled)",
+      "Proof of financial means meeting visa-specific threshold",
+      "Health insurance with full coverage in Spain (no co-pays acceptable for most visa types)",
+      "Proof of accommodation in Spain",
+      "Completed visa application form (EX-01 or relevant form)",
+      "Category-specific documents",
     ],
     common_pitfalls: [
-      "Not apostilling documents correctly",
-      "Insufficient proof of income for non-lucrative visa",
-      "Missing medical insurance meeting Spanish requirements",
-      "Not demonstrating non-Spanish income sources for certain visas",
-      "Underestimating financial requirements",
-      "Applying at wrong consulate (must be country of residence)"
-    ]
+      "Applying for the Golden Visa via real estate — Spain ended new applications for the real estate route in 2025",
+      "Not apostilling documents correctly — Spanish consulates are strict on apostille requirements",
+      "Health insurance that includes co-payments or deductibles — Spain requires policies with zero co-pay",
+      "Applying at the wrong consulate — must apply in the consulate for your country of legal residence",
+      "Insufficient proof of income for the Non-Lucrative Visa or Digital Nomad Visa",
+      "Underestimating financial requirements — the Non-Lucrative Visa requires demonstrating passive income, not just savings",
+    ],
   },
   {
     destination_slug: "canada",
-    overview: "Canada offers multiple immigration pathways through Express Entry, Provincial Nominee Programs, work permits, study permits, and family sponsorship. The points-based system for skilled workers is competitive. Consult Immigration, Refugees and Citizenship Canada (IRCC) for current requirements.",
+    // KEY 2026 CHANGES:
+    // - IRCC removed CRS points for LMIA-based job offers in March 2025
+    // - New Express Entry categories added Feb 2026: Senior Managers, Researchers, Transport workers, Skilled Military Recruits; plus Physicians (Dec 2025)
+    // - General draw CRS cut-offs: ~480–520; category draws lower (e.g., Physicians: 169; French proficiency: ~393)
+    // - Language test validity: 2 years (unchanged)
+    // - ECA from WES or approved body still required
+    last_verified: "2026-03-30",
+    overview:
+      "Canada uses Express Entry to manage applications for the Federal Skilled Worker, Canadian Experience Class, and Federal Skilled Trades programs. Comprehensive Ranking System (CRS) cut-offs fluctuate by draw type: general draws typically require 480–520 points in early 2026; category-based draws (healthcare, STEM, French proficiency, trades, transport, senior managers, researchers, physicians) have lower cut-offs. Important: as of March 2025, LMIA-based job offers no longer add CRS points. Provincial Nominee Programs (PNPs) add 600 CRS points and remain a highly effective pathway. Consult Immigration, Refugees and Citizenship Canada (IRCC) at canada.ca for current requirements.",
     common_pathways: [
-      "Express Entry (Federal Skilled Worker, Canadian Experience Class)",
-      "Provincial Nominee Programs (PNP)",
+      "Express Entry — Canadian Experience Class (CEC): must have 1+ year Canadian work experience",
+      "Express Entry — Federal Skilled Worker (FSW): international skilled workers",
+      "Express Entry — Category-Based Draws: healthcare, STEM, French proficiency, trades, transport, senior managers, researchers, physicians, skilled military (active in 2026)",
+      "Provincial Nominee Programs (PNP): adds 600 CRS points; each province has different streams",
       "Temporary Foreign Worker Program",
-      "Study Permit with post-graduation work permit",
+      "Study Permit with Post-Graduation Work Permit (PGWP)",
       "Start-Up Visa for entrepreneurs",
-      "Family sponsorship programs"
+      "Family sponsorship programs",
     ],
     typical_documents: [
       "Valid passport",
-      "Language test results (IELTS, CELPIP, or TEF)",
-      "Educational Credential Assessment (ECA)",
-      "Police certificates",
-      "Medical examination results",
-      "Proof of funds",
-      "Job offer or LMIA (if applicable)",
-      "Provincial nomination (if applicable)"
+      "Language test results: IELTS, CELPIP (English) or TEF, TCF (French) — valid for 2 years",
+      "Educational Credential Assessment (ECA) from a designated organization such as WES",
+      "Police certificates from all countries where resided 6+ months since age 18",
+      "Medical examination results from a panel physician",
+      "Proof of funds (liquid, unencumbered — specific amounts required for FSW)",
+      "Employment records / reference letters documenting work experience",
+      "Provincial nomination letter (if applicable)",
     ],
     common_pitfalls: [
-      "Insufficient Comprehensive Ranking System (CRS) score",
-      "Not getting Educational Credential Assessment early",
-      "Expired language test results (valid 2 years)",
-      "Inadequate proof of funds",
-      "Missing required work experience documentation",
-      "Not researching Provincial Nominee Programs which may have lower thresholds"
-    ]
+      "Expecting LMIA job offers to boost your CRS — IRCC removed those points in March 2025",
+      "CRS score too low for general draws (~480–520); explore category-based draws or PNPs for lower thresholds",
+      "Not getting an Educational Credential Assessment (ECA) early — WES assessments can take weeks",
+      "Expired language test results — valid for only 2 years; rebook if yours are older",
+      "Inadequate proof of funds — must be liquid and unencumbered",
+      "Missing required work experience documentation for category-based draws (now 12 months qualifying Canadian experience required, up from 6 months)",
+      "Not researching PNPs — a provincial nomination adds 600 CRS points and can make lower scores competitive",
+    ],
   },
   {
     destination_slug: "united-states",
-    overview: "The US immigration system is complex with various visa categories for work, study, investment, and family. Employment-based visas often require employer sponsorship. Consult US Citizenship and Immigration Services (USCIS) and the Department of State for official requirements.",
+    // No major structural changes to flag for 2026 vs original data
+    // H-1B lottery, EB-5, O-1 remain as described
+    last_verified: "2026-03-30",
+    overview:
+      "The US immigration system is complex with various visa categories for work, study, investment, and family. Employment-based visas often require employer sponsorship, and the H-1B is subject to an annual lottery (cap). Consult US Citizenship and Immigration Services (USCIS) at uscis.gov and the Department of State travel.state.gov for official requirements.",
     common_pathways: [
-      "H-1B Visa for specialty occupations",
+      "H-1B Visa for specialty occupations (subject to annual cap and lottery)",
       "L-1 Visa for intracompany transfers",
-      "F-1 Student Visa",
+      "O-1 Visa for individuals with extraordinary ability",
+      "F-1 Student Visa (with OPT/STEM OPT for post-graduation work authorization)",
       "EB-5 Immigrant Investor Program",
-      "O-1 Visa for extraordinary ability",
-      "Family-based immigration"
+      "Family-based immigration (immediate relatives, preference categories)",
     ],
     typical_documents: [
       "Valid passport",
-      "DS-160 or DS-260 form confirmation",
+      "DS-160 or DS-260 online application form confirmation",
       "Visa application fee receipt",
-      "Passport-sized photographs",
-      "Supporting petition (I-129, I-140, I-130, etc.)",
+      "Passport-sized photographs meeting US specifications",
+      "Approved petition (I-129 for H-1B/L-1/O-1, I-140 for employment-based immigrants, I-130 for family)",
       "Educational certificates and work experience letters",
       "Financial documentation",
-      "Medical examination (for immigrant visas)",
-      "Police certificates (for immigrant visas)"
+      "Medical examination (Form I-693, for immigrant visas and green card applications)",
+      "Police certificates (for immigrant visas)",
     ],
     common_pitfalls: [
-      "H-1B visa cap limitations (lottery system)",
-      "Long processing and waiting times for many categories",
+      "H-1B cap: only 85,000 visas issued annually (65,000 regular cap + 20,000 for US master's degrees) — most applicants enter a lottery",
+      "Long USCIS processing times for many categories — premium processing available for some petition types",
       "Insufficient documentation of extraordinary ability for O-1",
-      "Not maintaining valid status while in the US",
-      "Misunderstanding visa vs. immigration (green card) processes",
-      "Incomplete financial documentation for investor visas"
-    ]
+      "Not maintaining valid immigration status while in the US — overstays can result in multi-year bars",
+      "Misunderstanding the difference between a nonimmigrant visa and a green card (permanent residence)",
+      "Incomplete financial documentation for EB-5 investor visas",
+    ],
   },
   {
     destination_slug: "japan",
-    overview: "Japan's immigration system requires employer sponsorship for most work visas. The Certificate of Eligibility system streamlines the process. Language ability may be beneficial but isn't always required. Consult the Ministry of Foreign Affairs and Immigration Services Agency for current requirements.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Japan's immigration system requires a Certificate of Eligibility (CoE) for most work visas — the CoE is applied for by the sponsoring employer or institution in Japan before the applicant applies for a visa abroad. The Highly Skilled Professional (HSP) points-based visa offers accelerated permanent residence. Language ability is not always required but is beneficial for integration. Consult the Ministry of Foreign Affairs and the Immigration Services Agency of Japan for current requirements.",
     common_pathways: [
-      "Engineer/Specialist in Humanities/International Services visa",
-      "Highly Skilled Professional visa",
-      "Business Manager visa for entrepreneurs",
-      "Student visa (Ryugaku)",
-      "Designated Activities visa (including remote work)",
-      "Spouse or Child of Japanese National"
+      "Engineer/Specialist in Humanities/International Services (most common work visa)",
+      "Highly Skilled Professional (HSP) points-based visa — accelerated PR pathway",
+      "Business Manager visa for entrepreneurs and company directors",
+      "Student Visa (Ryugaku)",
+      "Specified Skilled Worker (SSW) — Levels 1 and 2 — for specific industries",
+      "Spouse or Child of Japanese National",
+      "Designated Activities visa (including some remote work arrangements)",
     ],
     typical_documents: [
       "Valid passport",
-      "Certificate of Eligibility (obtained by sponsor in Japan)",
+      "Certificate of Eligibility (CoE) — applied for by sponsor/employer in Japan",
       "Visa application form",
       "Passport photograph",
-      "Educational certificates",
+      "Educational certificates and transcripts",
       "Employment contract or admission letter",
       "Curriculum vitae",
-      "Company registration documents (for business visas)"
+      "Company registration documents (for business visas)",
     ],
     common_pitfalls: [
-      "Not obtaining Certificate of Eligibility before applying for visa",
-      "Insufficient points for Highly Skilled Professional visa",
-      "Incomplete business plan for Business Manager visa",
-      "Not having guarantor or sponsor in Japan",
-      "Misunderstanding that most tourist activities are not allowed on work visas",
-      "Not maintaining proper residence status and reporting requirements"
-    ]
+      "Applying for a visa without first obtaining a Certificate of Eligibility — the CoE must be secured by your sponsor before you apply at a Japanese consulate",
+      "Insufficient points for the Highly Skilled Professional visa (minimum 70 points)",
+      "Incomplete or insufficiently detailed business plan for Business Manager visa",
+      "Not having a guarantor or licensed sponsor in Japan",
+      "Attempting to work on a tourist or Designated Activities visa without correct authorization",
+      "Not reporting change of address or workplace to the local immigration office within required timeframes",
+    ],
   },
   {
     destination_slug: "australia",
-    overview: "Australia uses a points-based system for skilled migration and offers various temporary and permanent visa options. State sponsorship can provide additional points. The SkillSelect system manages applications. Consult the Department of Home Affairs for official information.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Australia uses a points-based system through SkillSelect for skilled migration. State and territory nomination (Subclass 190 or 491) can add 15 or 5 points respectively and is an important strategy for applicants whose scores are below the invitation threshold. Skills assessments must be completed by the relevant Australian assessing authority before an Expression of Interest can be submitted. Consult the Department of Home Affairs at homeaffairs.gov.au for official requirements.",
     common_pathways: [
-      "Skilled Independent Visa (Subclass 189)",
-      "Skilled Nominated Visa (Subclass 190)",
-      "Temporary Skill Shortage Visa (Subclass 482)",
+      "Skilled Independent Visa (Subclass 189) — no sponsorship required, invitation via SkillSelect",
+      "Skilled Nominated Visa (Subclass 190) — state/territory nomination, +15 points",
+      "Skilled Work Regional (Provisional) Visa (Subclass 491) — regional sponsorship, +5 points",
+      "Temporary Skill Shortage Visa (Subclass 482) — employer-sponsored, 2–4 year temporary",
       "Student Visa (Subclass 500)",
       "Business Innovation and Investment Visa",
-      "Partner and Family visas"
+      "Partner and Family visas",
     ],
     typical_documents: [
       "Valid passport",
-      "Skills assessment from relevant assessing authority",
-      "English language test results (IELTS, PTE, TOEFL)",
-      "Police certificates from all countries lived in 12+ months",
-      "Health examinations from panel physicians",
+      "Skills assessment from the relevant Australian assessing authority (e.g., Engineers Australia, VETASSESS, ACS)",
+      "English language test results: IELTS, PTE Academic, TOEFL iBT, or Cambridge C1 Advanced",
+      "Police certificates from all countries where resided 12+ months",
+      "Health examinations conducted by a DIBP-approved panel physician",
       "Educational qualifications and transcripts",
       "Employment references and payslips",
-      "Expression of Interest (EOI) through SkillSelect"
+      "Expression of Interest (EOI) submitted through SkillSelect",
     ],
     common_pitfalls: [
-      "Insufficient points for skilled migration",
-      "Skills assessment not matching intended occupation",
-      "Not meeting English language requirements",
-      "Health issues that don't meet health requirement",
-      "Inadequate evidence of skilled employment",
-      "Not researching state sponsorship opportunities which can add points"
-    ]
+      "Insufficient points for a Subclass 189 invitation — explore state/territory nomination (190 or 491) which adds extra points",
+      "Skills assessment does not match the intended ANZSCO occupation code",
+      "Not meeting English language requirements for the claimed points level",
+      "Health conditions that do not meet Australia's health requirement",
+      "Inadequate or poorly documented evidence of skilled employment",
+      "Not researching state/territory nomination streams, which are often open to a wider range of occupations and score levels",
+    ],
   },
   {
     destination_slug: "singapore",
-    overview: "Singapore offers employment passes for professionals, entrepreneur passes, and various other work permits. Requirements include salary thresholds and educational qualifications. Consult the Ministry of Manpower for current requirements.",
+    // No major structural changes to note for 2026 beyond ongoing salary threshold reviews
+    last_verified: "2026-03-30",
+    overview:
+      "Singapore offers work passes for professionals, managers, and executives, with eligibility heavily tied to salary thresholds and educational qualifications. Approval is not guaranteed and MOM exercises significant discretion. Consult the Ministry of Manpower (MOM) at mom.gov.sg for current requirements and the latest salary thresholds, which are reviewed periodically.",
     common_pathways: [
-      "Employment Pass for professionals and managers",
+      "Employment Pass (EP) for professionals, managers, and executives (salary threshold varies by age and sector)",
       "S Pass for mid-skilled workers",
-      "EntrePass for entrepreneurs",
+      "EntrePass for entrepreneurs building innovative businesses",
       "Student's Pass for education",
-      "Long-Term Visit Pass for family members",
-      "Personalised Employment Pass for high earners"
+      "Long-Term Visit Pass for family members of pass holders",
+      "Personalised Employment Pass (PEP) for high-earning EP holders",
     ],
     typical_documents: [
       "Valid passport",
       "Educational certificates and transcripts",
-      "Employment contract and job details",
+      "Employment contract and detailed job description",
       "Professional certificates and licenses",
       "Recent passport photograph",
-      "Company supporting documents",
-      "Business plan (for EntrePass)"
+      "Company supporting documents (registration, financial statements)",
+      "Business plan (for EntrePass)",
     ],
     common_pitfalls: [
-      "Not meeting minimum salary requirements (varies by age and sector)",
-      "Insufficient or non-recognized qualifications",
-      "Incomplete business plan for entrepreneurs",
-      "Not understanding that approval is not guaranteed",
-      "Missing renewal dates for passes",
-      "Employer not being registered or having insufficient quota"
-    ]
+      "Not meeting the minimum salary threshold, which varies by age and sector and is reviewed periodically by MOM — always check the current figures at mom.gov.sg before applying",
+      "Insufficient or non-recognized qualifications — MOM weighs quality of institution and relevance of degree to the role",
+      "Incomplete or weak business plan for EntrePass applications",
+      "Treating EP approval as guaranteed — MOM may reject applications even where stated criteria appear to be met",
+      "Missing renewal deadlines — penalties apply for working on an expired pass",
+      "Employer not having the correct headcount quota for S Pass holders",
+    ],
   },
   {
     destination_slug: "united-kingdom",
-    overview: "The UK points-based immigration system covers work, study, and other categories. Sponsorship by licensed employers or institutions is required for most routes. Consult UK Visas and Immigration for official guidance.",
+    // KEY 2026 CHANGES:
+    // - Skilled Worker minimum salary raised to £41,700/year (from £38,700) effective July 22 2025
+    // - Minimum skill level raised to RQF Level 6 (graduate level) from July 2025
+    // - LMIA-equivalent (Shortage Occupation List) replaced by Immigration Salary List → being replaced by Temporary Shortage List (ending Dec 2026)
+    // - ILR qualifying period extended for new entrants
+    last_verified: "2026-03-30",
+    overview:
+      "The UK's points-based immigration system underwent major reforms in 2025. As of July 22, 2025, the Skilled Worker Visa minimum salary is £41,700/year (or the going rate for the occupation, whichever is higher), up from £38,700. Minimum skill level raised to RQF Level 6 (graduate level). Health and Care visa roles have lower thresholds (from ~£31,300). The Immigration Salary List is being phased out and replaced by a Temporary Shortage List (expiring December 2026). Consult UK Visas and Immigration at gov.uk/skilled-worker-visa for official guidance.",
     common_pathways: [
-      "Skilled Worker Visa",
-      "Global Talent Visa",
-      "Student Visa",
-      "Graduate Visa (post-study work)",
-      "Innovator Founder Visa",
-      "Family visas"
+      "Skilled Worker Visa — employer-sponsored, min £41,700/year salary for most roles in 2026",
+      "Health and Care Worker Visa — reduced salary thresholds for NHS and eligible care roles",
+      "Global Talent Visa — no sponsor required, for leaders in academia, research, arts, digital technology",
+      "Student Visa — requires a Confirmation of Acceptance for Studies (CAS) from a licensed sponsor",
+      "Graduate Visa — 2-year (3-year for PhDs) post-study work visa, no employer sponsor needed",
+      "Innovator Founder Visa — for innovative, scalable business ideas endorsed by an approved body",
+      "Family visas",
     ],
     typical_documents: [
       "Valid passport",
-      "Certificate of Sponsorship (CoS) from licensed sponsor",
-      "Proof of English language ability",
-      "Proof of maintenance funds",
-      "Tuberculosis test results (if applicable)",
-      "Academic qualifications",
-      "Previous passport or travel history"
+      "Certificate of Sponsorship (CoS) from a UK Visas and Immigration licensed sponsor",
+      "Proof of English language ability (IELTS UKVI or approved equivalent, or eligible exemption)",
+      "Proof of maintenance funds (usually £1,270 in your account for 28 consecutive days)",
+      "Tuberculosis test results (required if you are from a listed country)",
+      "Academic qualifications (for Graduate/Global Talent routes)",
     ],
     common_pitfalls: [
-      "Not meeting minimum salary threshold for Skilled Worker route",
-      "Invalid or insufficient English language test",
-      "Sponsor not having valid license",
-      "Insufficient maintenance funds in bank account",
-      "Not understanding Immigration Health Surcharge requirement",
-      "Missing document submission deadline after application"
-    ]
+      "Salary below £41,700/year — the new minimum from July 2025; exceptions exist for PhD holders, new entrants (min ~£33,400), and ISL/Health roles",
+      "Minimum skill level not met — roles must be at RQF Level 6 (graduate level) for most Skilled Worker applications",
+      "Invalid or insufficient English language test — must be IELTS UKVI or an approved Secure English Language Test",
+      "Sponsor not holding a valid UKVI sponsor licence — verify at the official Home Office register",
+      "Not having maintenance funds continuously in your bank account for the full 28 days before application",
+      "Not paying the Immigration Health Surcharge (IHS) — required for most visa types and is paid upfront for the visa's duration",
+    ],
   },
   {
     destination_slug: "united-arab-emirates",
-    overview: "The UAE offers various visa types including employment visas, investor visas, and the new remote work visa. Most require sponsorship by UAE employer or property ownership. Regulations vary by emirate. Verify with UAE immigration authorities.",
+    // No major structural changes to note for 2026 beyond confirming existing programs
+    last_verified: "2026-03-30",
+    overview:
+      "The UAE offers employment visas (requiring employer sponsorship), investor and property-based visas, the Golden Visa for long-term residence (investors, talent, outstanding professionals), and a Remote Work Visa for digital nomads. Regulations vary by emirate; the UAE government's Federal Authority for Identity, Citizenship, Customs, and Port Security (ICP) and General Directorate of Residency and Foreigners Affairs (GDRFA) are the relevant authorities. Verify current requirements at icp.gov.ae.",
     common_pathways: [
-      "Employment Visa (requires employer sponsorship)",
-      "Investor Visa (property or business)",
-      "Remote Work Visa for digital nomads",
-      "Golden Visa for investors and talented individuals",
+      "Employment Visa (requires employer sponsorship — employer initiates the process)",
+      "Golden Visa — 10-year renewable residence for investors, property owners (AED 2M+), outstanding professionals, scientists, and talented individuals",
+      "Property Investor Visa — 2-year or 10-year depending on investment value",
+      "Remote Work Visa — 1-year renewable for digital nomads employed abroad",
       "Student Visa",
-      "Dependent Visa"
+      "Dependent Visa for family members",
     ],
     typical_documents: [
       "Valid passport with minimum 6 months validity",
       "Passport photographs",
-      "Entry permit issued by sponsor",
-      "Medical fitness test (within UAE)",
-      "Emirates ID application",
+      "Entry permit issued by sponsor (employer or property developer)",
+      "Medical fitness test (conducted within the UAE after entry)",
+      "Emirates ID application (biometrics in UAE)",
       "Employment contract or investment proof",
-      "Educational certificates (attested)",
-      "No objection certificate (if changing sponsor)"
+      "Educational certificates (attested — check country-specific attestation chain)",
+      "No Objection Certificate (NOC) if changing employers within 6 months of previous visa",
     ],
     common_pitfalls: [
-      "Not completing medical tests within the UAE",
-      "Document attestation requirements not understood",
-      "Employer not processing visa on time",
-      "Not maintaining valid status (fines for overstaying)",
-      "Confusion about which emirate's rules apply",
-      "Not understanding that visa cancellation requires exit"
-    ]
+      "Not completing medical tests inside the UAE within the required timeframe after entry",
+      "Not understanding the attestation chain for educational documents (home country → UAE embassy → UAE Ministry of Foreign Affairs)",
+      "Employer delays in processing the visa — applicants have limited recourse; set clear timelines in employment contracts",
+      "Overstaying — daily fines apply and can accumulate quickly",
+      "Assuming visa rules are identical across all emirates — GDRFA Dubai rules can differ from Abu Dhabi's ICA rules",
+      "Not obtaining an exit permit when canceling a visa before leaving the UAE",
+    ],
   },
   {
     destination_slug: "new-zealand",
-    overview: "New Zealand offers skilled migration through various streams, including accredited employer work visas and residence pathways. The points system and skill shortage lists are important. Consult Immigration New Zealand for official requirements.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "New Zealand's Accredited Employer Work Visa (AEWV) is the primary work visa for most skilled migrants and requires a job offer from a New Zealand employer accredited by Immigration New Zealand (INZ). The Skilled Migrant Category Residence Visa uses a points-based system tied to skilled employment in New Zealand. Consult Immigration New Zealand at immigration.govt.nz for current requirements.",
     common_pathways: [
-      "Accredited Employer Work Visa",
-      "Skilled Migrant Category Residence Visa",
+      "Accredited Employer Work Visa (AEWV) — employer must be accredited by INZ",
+      "Skilled Migrant Category Residence Visa — points-based, requires skilled employment in NZ",
+      "Working Holiday Visa — for eligible nationalities, up to 12–23 months",
       "Student Visa",
-      "Working Holiday Visa",
       "Entrepreneur Work Visa",
-      "Partnership-based visas"
+      "Partnership-based visas",
     ],
     typical_documents: [
       "Valid passport",
-      "Job offer from accredited employer (for work visa)",
-      "English language test (IELTS or equivalent)",
-      "Police certificates",
-      "Medical certificates and chest X-ray",
-      "Qualifications assessment",
-      "Evidence of funds",
-      "Expression of Interest (for residence)"
+      "Job offer or employment agreement from an INZ-accredited employer (for AEWV)",
+      "English language test results (IELTS or equivalent, if required)",
+      "Police certificates from all countries of residence",
+      "Medical certificates and chest X-ray (if required)",
+      "Qualifications assessment (if occupation requires it)",
+      "Evidence of sufficient funds",
+      "Expression of Interest (for Skilled Migrant Category)",
     ],
     common_pitfalls: [
-      "Insufficient points for Skilled Migrant Category",
-      "Occupation not on skill shortage lists",
-      "Employer not being accredited",
+      "Employer not being INZ-accredited — without accreditation the AEWV cannot proceed, and accreditation takes time",
+      "Occupation not on the skill shortage lists — while not always required, shortage-list occupations are prioritised",
+      "Insufficient points for the Skilled Migrant Category",
       "Not meeting health or character requirements",
-      "Incomplete documentation of work experience",
-      "Not researching regional visa options which may have lower barriers"
-    ]
+      "Incomplete or poorly documented work experience",
+      "Not exploring regional-specific visa options which may have lower barriers",
+    ],
   },
   {
     destination_slug: "mexico",
-    overview: "Mexico offers temporary and permanent residence visas with various pathways including retirement, work, and family ties. Financial requirements are assessed at Mexican consulates. Verify current requirements with Instituto Nacional de Migración.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Mexico offers Temporary and Permanent Resident visas with pathways including retirement, passive income, work, and family ties. Financial requirements are assessed at Mexican consulates and must be demonstrated at the time of application. Verify current requirements with the Instituto Nacional de Migración (INM) at gob.mx/inm.",
     common_pathways: [
-      "Temporary Resident Visa (with or without work permission)",
-      "Permanent Resident Visa",
-      "Work Visa (with job offer)",
+      "Temporary Resident Visa (without work permission) — for passive income/retirement",
+      "Temporary Resident Visa (with work permission) — requires a job offer from a Mexican employer",
+      "Permanent Resident Visa (after 4 years of temporary residence, or directly for qualifying retirees)",
+      "Work Visa with job offer",
       "Student Visa",
       "Family unity visa",
-      "Retirement visa"
     ],
     typical_documents: [
       "Valid passport",
       "Completed visa application",
-      "Proof of economic solvency (bank statements, pension, etc.)",
+      "Proof of economic solvency (bank statements, pension income, etc.) meeting consulate-specific thresholds",
       "Passport photographs",
       "Application fee payment",
-      "Supporting documents per visa type",
-      "Apostilled documents where required"
+      "Apostilled supporting documents where required",
     ],
     common_pitfalls: [
-      "Not applying at consulate in country of residence",
-      "Insufficient proof of financial means",
-      "Not understanding you must enter Mexico within 180 days of visa approval",
-      "Missing appointment to complete residence card within 30 days of entry",
-      "Not apostilling required documents",
-      "Assuming tourist visa can be converted to residence (must apply from abroad)"
-    ]
+      "Applying at a consulate not covering your country of legal residence",
+      "Insufficient proof of financial means — income thresholds vary by consulate and change periodically; verify before applying",
+      "Not entering Mexico within 180 days of visa approval — the visa becomes invalid",
+      "Missing the 30-day window after entry to complete the resident card (canje) at an INM office in Mexico",
+      "Not apostilling required documents before traveling to Mexico",
+      "Attempting to convert a tourist visa/visa-free entry to residence status in Mexico — this is not permitted; you must apply from abroad",
+    ],
   },
   {
     destination_slug: "netherlands",
-    overview: "The Netherlands offers various work permits, the highly skilled migrant scheme, and the Dutch American Friendship Treaty for US citizens. The 30% ruling provides tax benefits for some workers. Consult the Immigration and Naturalisation Service (IND).",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "The Netherlands offers the Highly Skilled Migrant (HSM) Visa, the Orientation Year for recent graduates, the DAFT visa for US citizens under the Dutch-American Friendship Treaty, and other pathways. The employer must be a recognized IND sponsor. Consult the Immigration and Naturalisation Service (IND) at ind.nl for current salary thresholds and requirements.",
     common_pathways: [
-      "Highly Skilled Migrant Visa",
-      "Orientation Year for graduates",
-      "Self-Employment Visa",
-      "Dutch American Friendship Treaty Visa (DAFT)",
+      "Highly Skilled Migrant (Kennismigrant) Visa — requires recognized IND sponsor employer",
+      "Orientation Year Visa (Zoekjaar) for recent graduates from top universities",
+      "Self-Employment Visa (Zelfstandige zonder personeel/ZZP)",
+      "Dutch American Friendship Treaty (DAFT) Visa for US citizens",
       "Student Visa",
-      "Family reunification"
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
-      "MVV (provisional residence permit) if required",
+      "MVV (provisional residence permit) — required for most non-EU nationals applying from abroad",
       "Employment contract or admission letter",
-      "Proof of sufficient means",
-      "Tuberculosis test certificate (if applicable)",
-      "Antecedents certificate (criminal record)",
+      "Proof of sufficient means (salary meeting HSM threshold or self-employment business plan)",
+      "Tuberculosis test certificate if applicable (from listed countries)",
+      "Antecedents certificate (criminal record) from country of origin",
       "Diploma or degree certificates",
-      "Sponsor documents (employer or institution)"
+      "Sponsor declaration from employer (IND-recognized sponsor only)",
     ],
     common_pitfalls: [
-      "Employer not registered as recognized sponsor",
-      "Not meeting salary threshold for highly skilled migrants",
-      "Insufficient business plan for self-employment",
-      "Missing MVV requirement (depends on nationality)",
-      "Not understanding that work permit and residence permit are separate processes",
-      "Delay in collecting residence permit after arrival"
-    ]
+      "Employer not registered as an IND recognized sponsor — without this, the HSM visa is not possible",
+      "Salary not meeting the HSM threshold (varies by age — check current IND figures as they update annually)",
+      "Insufficient business plan for self-employment visa applications",
+      "Missing MVV requirement — most non-EU nationals must obtain an MVV (entry visa) before traveling",
+      "Not understanding that the work authorization and residence permit are processed together via the sponsor",
+      "Delaying collection of the residence permit after arrival — it must be collected at the IND within a specific window",
+    ],
   },
   {
     destination_slug: "italy",
-    overview: "Italy offers work visas through annual quota system, student visas, and elective residence visas for those with passive income. Processing can be lengthy. Consult Italian diplomatic missions and the Ministry of Interior for requirements.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Italy issues work visas through an annual quota system (decreto flussi), which opens for a limited number of applications and fills very quickly. The Elective Residence Visa suits passive income holders. The Permesso di Soggiorno must be applied for within 8 days of arrival. Consult Italian diplomatic missions and the Ministry of Interior at portaleimmigrazione.it for requirements.",
     common_pathways: [
-      "Elective Residence Visa for passive income holders",
-      "Work Visa (subject to annual quotas)",
+      "Elective Residence Visa for passive income holders (no work rights)",
+      "Work Visa (decreto flussi — annual quota system)",
+      "Self-Employment Visa (freelancers, professionals)",
+      "Start-up Visa for qualifying entrepreneurs",
       "Student Visa",
-      "Self-Employment Visa",
-      "Start-up Visa for entrepreneurs",
-      "Family reunification"
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
-      "Visa application form (Nulla Osta)",
+      "Visa application form (submitted at Italian consulate in your country of residence)",
+      "Nulla Osta (work authorization from Italian employer, for work visas)",
       "Proof of accommodation in Italy",
       "Proof of financial means",
       "Health insurance",
       "Criminal record certificate",
-      "Supporting documents per visa type",
-      "Permesso di Soggiorno application upon arrival"
+      "Category-specific supporting documents",
     ],
     common_pitfalls: [
-      "Annual work visa quotas filling quickly",
-      "Not applying for Permesso di Soggiorno within 8 days of arrival",
-      "Insufficient passive income proof for elective residence",
-      "Underestimating processing times at Italian consulates",
-      "Not understanding regional variations in requirements",
-      "Missing document translations and legalizations"
-    ]
+      "Annual work visa quotas (decreto flussi) fill within minutes of opening — have all documents ready before the portal opens",
+      "Not applying for the Permesso di Soggiorno at a local post office (CAF) within 8 days of arriving in Italy",
+      "Insufficient passive income documentation for the Elective Residence Visa",
+      "Severely underestimating processing times at Italian consulates (often 3–6 months)",
+      "Missing document translations and legalizations — Italian authorities require sworn translations into Italian",
+      "Not understanding that the quota system is separate from employer sponsorship — both must align",
+    ],
   },
   {
     destination_slug: "france",
-    overview: "France offers various visa types including the talent passport for skilled workers, student visas, and visitor visas. The French Tech Visa is available for tech workers. Consult the French Ministry of Interior and French consulates.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "France offers a range of long-stay visas including the Talent Passport (Passeport Talent) for various skilled worker categories, the French Tech Visa for tech employees and founders, the Visitor Long-Stay Visa for passive income holders, and Student Visas. OFII validation must be completed within 3 months of arrival for long-stay visa holders. Consult France-Visas (france-visas.gouv.fr) for requirements.",
     common_pathways: [
-      "Talent Passport (various categories)",
-      "Long-Stay Visa (Visitor)",
+      "Talent Passport (Passeport Talent) — multiple sub-categories including highly skilled employees, researchers, artists, investors, and innovators",
+      "French Tech Visa — for employees and founders of certified French Tech ecosystem companies",
+      "Long-Stay Visitor Visa — for passive income holders and retirees",
+      "Employee Long-Stay Visa — requires work authorization from DRIEETS",
       "Student Visa",
-      "Employee Visa",
-      "French Tech Visa for startup employees/founders",
-      "Family reunification"
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
-      "Long-stay visa application form",
+      "Long-stay visa application form (via france-visas.gouv.fr)",
       "Passport photographs",
       "Proof of accommodation",
       "Proof of financial means",
       "Health insurance",
       "Criminal record",
-      "Supporting documents per category",
-      "OFII validation upon arrival"
+      "Category-specific supporting documents",
     ],
     common_pitfalls: [
-      "Not validating visa with OFII within 3 months of arrival",
-      "Insufficient proof of financial means",
-      "Incomplete document translations",
-      "Not understanding Talent Passport eligibility criteria",
-      "Missing visa appointment due to high demand",
-      "Not meeting minimum salary requirements for certain categories"
-    ]
+      "Not validating the long-stay visa with OFII within 3 months of arrival — failure to validate invalidates the visa",
+      "Insufficient proof of financial means — France requires demonstrating you will not be a burden on the state",
+      "Incomplete document translations — all documents in non-French languages must be translated by a certified translator",
+      "Not understanding Talent Passport eligibility criteria — each sub-category has specific salary, contract, or qualification requirements",
+      "Missing visa appointment due to high demand at French consulates — book well in advance",
+      "Not meeting minimum salary requirements for the employee categories of the Talent Passport",
+    ],
   },
   {
     destination_slug: "costa-rica",
-    overview: "Costa Rica offers retirement programs (pensionado), investor visas, and work permits. The country is popular with retirees due to affordable healthcare. Verify requirements with Dirección General de Migración y Extranjería.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Costa Rica offers retirement (Pensionado), passive income (Rentista), and investor residence programs, as well as a Digital Nomad Visa for remote workers. All documents must be apostilled and officially translated into Spanish. Processing can take 12–24 months. Verify requirements with the Dirección General de Migración y Extranjería (DGME) at migracion.go.cr.",
     common_pathways: [
-      "Pensionado (retiree) residency",
-      "Rentista (passive income) residency",
-      "Investor residency",
-      "Work permit with residence",
+      "Pensionado (retiree) residency — requires minimum USD 1,000/month pension income",
+      "Rentista (passive income) residency — requires minimum USD 2,500/month provable income or USD 60,000 deposited in a Costa Rican bank",
+      "Investor residency — minimum USD 150,000 investment in Costa Rica",
+      "Work permit with residence (employer-sponsored)",
       "Student visa",
-      "Digital nomad visa"
+      "Digital Nomad Visa — for remote workers with minimum USD 3,000/month income",
     ],
     typical_documents: [
       "Valid passport",
-      "Birth certificate (apostilled)",
-      "Marriage certificate if applicable (apostilled)",
-      "Criminal record (apostilled)",
-      "Proof of income or investment",
+      "Birth certificate (apostilled and officially translated to Spanish)",
+      "Marriage certificate if applicable (apostilled and translated)",
+      "Criminal record from home country and all countries of recent residence (apostilled and translated)",
+      "Proof of income or investment meeting the specific program threshold",
       "Health certificate",
       "Passport photographs",
-      "Application forms and fees"
+      "Application forms and fees paid",
     ],
     common_pitfalls: [
-      "Not apostilling documents correctly",
-      "Insufficient proof of pension or passive income",
-      "Documents older than 6 months not accepted",
-      "Not using certified translator for non-Spanish documents",
-      "Underestimating processing timeline",
-      "Not maintaining required presence in Costa Rica for renewals"
-    ]
+      "Not apostilling AND having documents officially translated into Spanish — both are required; either alone is insufficient",
+      "Using documents older than 6 months — Costa Rican immigration does not accept outdated documents",
+      "Insufficient proof of pension or passive income for the specific program threshold",
+      "Underestimating the processing timeline — residency applications frequently take 12–24 months",
+      "Not maintaining required physical presence in Costa Rica for residency renewals",
+      "Attempting to convert tourist status to residency inside Costa Rica — this is generally not permitted",
+    ],
   },
   {
     destination_slug: "malaysia",
-    overview: "Malaysia offers the MM2H program for long-term stays, employment passes, and student visas. Requirements vary by nationality. Consult Immigration Department of Malaysia for official requirements.",
+    // No major structural changes to note for 2026; MM2H still has stricter 2021 requirements
+    last_verified: "2026-03-30",
+    overview:
+      "Malaysia offers the revamped Malaysia My Second Home (MM2H) program for long-term stays, employment passes for skilled workers, and a DE Rantau digital nomad pass. The MM2H program was significantly restructured in 2021 with higher financial requirements and has not returned to its previous more accessible terms. Consult the Immigration Department of Malaysia at imi.gov.my for current requirements.",
     common_pathways: [
-      "Malaysia My Second Home (MM2H) program",
-      "Employment Pass",
-      "Professional Visit Pass",
+      "Malaysia My Second Home (MM2H) — 5-year renewable, high financial requirements",
+      "Employment Pass (Category I, II, III depending on salary and role)",
+      "Professional Visit Pass (for short-term professional work)",
       "Student Pass",
-      "Dependent Pass",
-      "Digital Nomad Pass"
+      "Dependent Pass for family of employment pass holders",
+      "DE Rantau Digital Nomad Pass (for remote workers with qualified employer outside Malaysia)",
     ],
     typical_documents: [
-      "Valid passport (minimum 18 months validity)",
+      "Valid passport (minimum 18 months validity for MM2H)",
       "Passport photographs",
-      "Letter of good conduct",
-      "Medical report",
-      "Financial documents (varies by program)",
-      "Educational certificates",
+      "Letter of good conduct / police clearance",
+      "Medical report from a registered doctor",
+      "Financial documents — MM2H requires significant liquid assets and fixed deposit in a Malaysian bank",
+      "Educational certificates (for employment passes)",
       "Employment contract (for work passes)",
-      "Approval letter from relevant authority"
+      "Approval letter from Tourism Malaysia (for MM2H)",
     ],
     common_pitfalls: [
-      "MM2H program requirements have become more stringent",
-      "Insufficient fixed deposit or income proof",
-      "Not meeting age requirements for certain programs",
-      "Employer not registered or lacking approval",
-      "Incomplete health screening",
-      "Not understanding difference between social visit pass and residence"
-    ]
+      "MM2H program is significantly more stringent since 2021 — the minimum offshore income (RM 40,000/month) and fixed deposit (RM 1 million) requirements are much higher than before the revision",
+      "Not meeting age requirements — MM2H has different tiers for those above and below 35",
+      "Employer not registered with the relevant Malaysian authority or lacking approval quota",
+      "Incomplete health screening or using an unapproved medical provider",
+      "Confusing the Social Visit Pass (tourist entry) with residence or MM2H status",
+      "Not understanding that DE Rantau is a separate program with its own application portal",
+    ],
   },
   {
     destination_slug: "ireland",
-    overview: "Ireland offers various immigration routes including critical skills employment permits, startup visas, and student visas. EU citizens have different rights. Consult Irish Naturalisation and Immigration Service (INIS).",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Ireland offers the Critical Skills Employment Permit for high-demand roles, the General Employment Permit for broader occupations, and the Startup Entrepreneur Programme (STEP). Employment permits are issued by the Department of Enterprise, Trade and Employment (DETE) and must be approved before a visa application is made. Non-EEA nationals then register for an Irish Residence Permit (IRP) on arrival. Consult the DETE employment permits page and the Irish Naturalisation and Immigration Service (INIS/ISD) at irishimmigration.ie.",
     common_pathways: [
-      "Critical Skills Employment Permit",
-      "General Employment Permit",
+      "Critical Skills Employment Permit — for roles on the Critical Skills Occupations List",
+      "General Employment Permit — for other eligible roles not on the ineligible list",
       "Startup Entrepreneur Programme (STEP)",
       "Student Visa",
-      "Stamp 0 for independent means",
-      "Family reunification"
+      "Stamp 0 for persons of independent means",
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
-      "Employment permit approval (for work)",
-      "Job offer and contract",
+      "Employment permit approval from DETE (obtained before visa application)",
+      "Job offer and signed employment contract",
       "Educational qualifications",
       "Proof of financial means",
       "Private medical insurance",
-      "Irish Residence Permit (IRP) registration upon arrival",
-      "Supporting documents per visa type"
+      "Irish Residence Permit (IRP) registration at a Garda National Immigration Bureau (GNIB) office within 90 days of arrival",
     ],
     common_pitfalls: [
-      "Not checking if occupation is on ineligible list",
-      "Minimum salary requirements not met",
-      "Labour Market Needs Test not satisfied",
-      "Not registering for IRP within required timeframe after arrival",
-      "Insufficient proof of independent means for Stamp 0",
-      "Not understanding employment permit must be approved before visa application"
-    ]
+      "Applying for a job that appears on the ineligible occupations list — these cannot be sponsored under general permits",
+      "Salary below the required minimum for the relevant permit type — verify current figures with DETE",
+      "Labour Market Needs Test not satisfied for General Employment Permit applications — employer must advertise the role domestically first",
+      "Not registering for an IRP within 90 days of arrival in Ireland",
+      "Applying for a visa before the employment permit is approved — the permit must come first",
+      "Insufficient proof of independent means for Stamp 0 applications (no work or access to public funds allowed on this stamp)",
+    ],
   },
   {
     destination_slug: "south-korea",
-    overview: "South Korea offers various visa types including E-7 for skilled workers, F-series for long-term stays, and D-series for specific purposes. The TOPIK exam may be beneficial. Consult Hi Korea and Korean diplomatic missions.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "South Korea offers a variety of visa types for skilled work (E-7), study (D-2), job seeking (D-10), and long-term residence (F-series). Most work visas require a visa issuance number obtained through the Korean employer before applying at a Korean diplomatic mission abroad. The F-2 Resident Visa uses a points system. Consult the Hi Korea portal at hikorea.go.kr for current requirements.",
     common_pathways: [
-      "E-7 Visa (Designated Activities - skilled work)",
-      "D-10 Job Seeker Visa",
+      "E-7 Visa (Designated Activities) — skilled work in specific occupations approved by MOEF",
+      "D-10 Job Seeker Visa — for searching for employment in Korea (for graduates of Korean universities or overseas professionals)",
       "D-2 Student Visa",
-      "F-2 Resident Visa (points-based)",
-      "F-4 Visa for overseas Koreans",
-      "Marriage-based visas"
+      "F-2 Resident Visa (points-based) — for long-term residents qualifying via education, income, Korean ability",
+      "F-4 Visa for overseas Koreans of Korean descent",
+      "Marriage-based visas (F-2, F-5, F-6)",
     ],
     typical_documents: [
       "Valid passport",
       "Visa application form",
       "Passport photograph",
+      "Visa issuance number from a Korean Immigration office (obtained by Korean employer/institution)",
       "Certificate of employment or admission",
       "Educational certificates and transcripts",
-      "Health certificate",
+      "Health certificate (some visa types)",
       "Criminal record check",
-      "Financial proof",
-      "Visa issuance number (if applicable)"
     ],
     common_pitfalls: [
-      "Not obtaining visa issuance number before applying",
-      "Insufficient points for F-2 resident visa",
-      "Document apostille and authentication requirements",
-      "Not meeting minimum salary for work visas",
-      "Korean language requirement for certain visas",
-      "Not registering at immigration within 90 days of entry"
-    ]
+      "Not obtaining a visa issuance number before visiting the Korean consulate — without it the visa cannot be issued",
+      "Insufficient points for the F-2 resident visa (minimum 80 points required)",
+      "Document apostille and authentication requirements not met — verify the specific requirements with the Korean consulate in your country",
+      "Not meeting minimum salary requirements for E-7 work visas",
+      "Not registering at a local immigration office within 90 days of entry when required",
+      "Not having Korean language proficiency (TOPIK) where it is required for specific E-7 categories",
+    ],
   },
   {
     destination_slug: "greece",
-    overview: "Greece offers the Golden Visa program, work permits, student visas, and financial independence visas. Processing can be lengthy. Verify requirements with Greek diplomatic missions and Ministry of Migration.",
+    // KEY 2026 CHANGES:
+    // - Golden Visa tier system confirmed: €800k (Zone A: Athens, Thessaloniki, islands >3,100 pop), €400k (Zone B), €250k (Zone C: conversions/restorations)
+    // - New startup investment route added Jan 2026: €250k investment in Elevate Greece registry startup
+    // - Citizenship: 7 years legal residence + language exam required (unchanged)
+    last_verified: "2026-03-30",
+    overview:
+      "Greece's Golden Visa program uses a three-tier investment structure as of 2024/2026: Zone A (Athens, Thessaloniki, major islands) requires €800,000; Zone B (regional areas) requires €400,000; Zone C (heritage building conversions/restorations) requires €250,000. A new startup investment route launched in January 2026 allows a €250,000 investment in a startup registered on the Elevate Greece national registry. The Golden Visa grants 5-year renewable residence with no minimum stay requirement but does not include work rights. Citizenship requires 7 years of actual residence (183 days/year) and a Greek language exam. Consult the Greek Ministry of Migration and Asylum at migration.gov.gr.",
     common_pathways: [
-      "Golden Visa (investment in real estate or other assets)",
-      "Work Permit and Residence",
+      "Golden Visa — Zone A (Athens, Thessaloniki, major islands): minimum €800,000 real estate investment",
+      "Golden Visa — Zone B (regional Greece): minimum €400,000 real estate investment",
+      "Golden Visa — Zone C (heritage conversions/restorations, anywhere in Greece): minimum €250,000",
+      "Golden Visa — Startup investment: minimum €250,000 in an Elevate Greece registered startup (new from Jan 2026)",
+      "Golden Visa — Financial assets: €500,000 government bonds, REITs, or qualifying funds",
+      "Work Permit and Residence (employer-sponsored)",
       "Financially Independent Person Visa",
-      "Student Visa",
       "Digital Nomad Visa",
-      "Family reunification"
+      "Student Visa",
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
       "Completed application forms",
       "Passport photographs",
+      "Proof of qualifying investment (notarized purchase agreement, investment certificates, etc.)",
       "Proof of health insurance",
-      "Financial documentation",
-      "Proof of accommodation",
       "Criminal record certificate",
-      "Medical certificate",
-      "Category-specific documents"
+      "Medical certificate (for some visa types)",
+      "Financial documentation demonstrating source of funds",
     ],
     common_pitfalls: [
-      "Golden Visa minimum investment increased to EUR 800,000 in some areas",
-      "Not understanding that Golden Visa doesn't grant work rights initially",
-      "Insufficient proof of financial independence",
-      "Document translation and legalization requirements",
-      "Lengthy processing times at consulates and in Greece",
-      "Not maintaining required time in Greece for permanent residence"
-    ]
+      "Not understanding the three-tier zone system — the same property type now costs €250k, €400k, or €800k depending on exact location",
+      "Confusing the €800k Zone A threshold (Athens, Thessaloniki, major islands) with the old single €800k figure — lower zones still exist",
+      "Assuming the Golden Visa grants work rights — it does not; additional permits are needed to work in Greece",
+      "Insufficient proof of financial independence for the Financially Independent Person Visa",
+      "Document translation and apostille/legalization requirements — all foreign documents must be translated and legalized",
+      "Significant processing backlogs at Greek authorities — plan for a 6–12 month timeline",
+      "Not understanding that citizenship requires 7 years of actual legal residence (183 days/year) plus a Greek language and culture exam",
+    ],
   },
   {
     destination_slug: "chile",
-    overview: "Chile offers various visa types including work visas, the temporary residence for independent means, and startup visas. The new migration law has updated processes. Consult Servicio Nacional de Migraciones.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Chile's immigration framework is governed by the 2021 Ley de Migración. Most foreign nationals apply for a Temporary Residence Visa that leads to Definitive Residence after 2 years of continuous stay. RUT (tax ID) registration is essential upon arrival. Verify requirements with the Servicio Nacional de Migraciones (SERMIG) at migracionchile.cl.",
     common_pathways: [
-      "Temporary Residence Visa for work",
-      "Temporary Residence for Independent Means",
-      "Startup Chile Visa",
+      "Temporary Residence Visa for employment (requires job offer from a Chilean employer)",
+      "Temporary Residence for Independent Means (for passive income holders and retirees)",
+      "Startup Chile Visa — for entrepreneurs selected through the Startup Chile program",
       "Student Visa",
-      "Definitive Residence (after temporary)",
-      "Family reunification"
+      "Definitive Residence — after 2 years of temporary residence",
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
       "Birth certificate (apostilled)",
-      "Criminal record (apostilled)",
+      "Criminal record from home country and countries of recent residence (apostilled)",
       "Health certificate",
-      "Proof of means of support",
+      "Proof of means of support (employment contract, income documentation)",
       "Employment contract or business plan",
       "Passport photographs",
-      "Application fees"
+      "Application fees paid through the government portal",
     ],
     common_pitfalls: [
-      "Not apostilling documents before travel",
-      "Insufficient proof of financial means",
-      "Not understanding temporary vs. definitive residence progression",
-      "Missing RUT (tax ID) application",
-      "Documents older than 90 days not accepted",
-      "Not completing process steps within required timeframes"
-    ]
+      "Not apostilling documents before traveling — Chilean immigration will not accept unverified foreign documents",
+      "Insufficient proof of financial means — monthly income thresholds apply",
+      "Not applying for a RUT (tax ID) promptly after arrival — required for bank accounts, contracts, and most legal matters",
+      "Using documents older than 90 days — they are not accepted by SERMIG",
+      "Not completing required steps within required timeframes (e.g., residence card appointment after visa approval)",
+      "Confusing Temporary and Definitive Residence — Definitive Residence requires 2 continuous years as a temporary resident",
+    ],
   },
   {
     destination_slug: "colombia",
-    overview: "Colombia offers visitor visas that can lead to residence, work visas, and investment visas. The country has various visa types categorized as V (visitor), M (migrant), and R (resident). Consult Ministerio de Relaciones Exteriores.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Colombia's visa system was modernized in 2022 and categorizes visas as Visitor (V), Migrant (M), and Resident (R). The Migrant category includes work, investor, retirement, and digital nomad visas. A Cédula de Extranjería (foreign ID card) must be obtained within 15 days of a Migrant or Resident visa being issued. Verify requirements with the Ministerio de Relaciones Exteriores at cancilleria.gov.co.",
     common_pathways: [
-      "Migrant Visa (M) - various categories including work, retirement, business owner",
-      "Visitor Visa (V) with work authorization",
-      "Investment Visa",
-      "Digital Nomad Visa",
+      "Visitor Visa (V) with work authorization — for short-term work arrangements",
+      "Migrant Visa (M) — employee: requires Colombian employer sponsorship",
+      "Migrant Visa (M) — business owner/investor: for those running or investing in a Colombian company",
+      "Migrant Visa (M) — pensioner/retiree: minimum ~3x Colombian minimum wage in monthly pension income",
+      "Digital Nomad Visa (V) — 2-year multiple-entry, requires minimum income from outside Colombia",
       "Student Visa",
-      "Marriage-based residence"
+      "Marriage/family-based residence",
+      "Resident Visa (R) — after 5 years of continuous Migrant visa status in most categories",
     ],
     typical_documents: [
       "Valid passport",
-      "Visa application",
+      "Online visa application via the Colombian Ministry of Foreign Affairs portal",
       "Motivation letter",
-      "Financial documentation",
+      "Financial documentation meeting category threshold",
       "Apostilled documents (varies by visa type)",
       "Criminal record if required",
-      "Health insurance",
-      "Category-specific documents"
+      "Health insurance valid in Colombia",
+      "Category-specific documents (employment contract, investment proof, etc.)",
     ],
     common_pitfalls: [
-      "Not understanding V/M/R visa category system",
-      "Insufficient financial documentation",
-      "Attempting to convert tourist visa to work visa (may not be possible)",
-      "Not apostilling required documents",
-      "Missing cédula de extranjería application after visa approval",
-      "Not understanding accumulation of time for resident visa"
-    ]
+      "Not understanding the V/M/R visa category system — applying in the wrong category causes rejection",
+      "Insufficient financial documentation — minimum income and asset requirements apply by category",
+      "Attempting to work on a Visitor visa without work authorization — penalties apply",
+      "Not applying for the Cédula de Extranjería within 15 days of visa issuance",
+      "Not apostilling required documents from your home country",
+      "Not understanding the accumulation of time across Migrant visa renewals required for the Resident visa",
+    ],
   },
   {
     destination_slug: "brazil",
-    overview: "Brazil offers various visa types including work visas (VITEM V), investor visas, and retirement visas. The application process involves Brazilian consulates and the Federal Police. Consult the Ministry of Justice and Public Security.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Brazil offers work visas (VITEM V), investor visas (VITEM II), retirement visas (VITEM I), and a Digital Nomad Visa. Work authorization from the Ministry of Labor must be obtained before applying for a work visa. Federal Police registration within 90 days of arrival is mandatory. Consult Brazilian consulates and the Ministry of Justice and Public Security at justica.gov.br.",
     common_pathways: [
-      "Work Visa (VITEM V)",
-      "Investment Visa (VITEM II)",
-      "Retirement Visa (VITEM I)",
+      "Work Visa (VITEM V) — requires prior Ministry of Labor authorization",
+      "Investment Visa (VITEM II) — minimum USD 500,000 in a Brazilian company (for most nationalities)",
+      "Retirement/Pension Visa (VITEM I) — for those with provable pension income",
       "Student Visa (VITEM IV)",
-      "Digital Nomad Visa",
-      "Family reunification"
+      "Digital Nomad Visa — 1-year renewable, minimum USD 1,500/month income from abroad",
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
       "Visa application form",
       "Passport photographs",
       "Criminal record (apostilled)",
-      "Authorization from Brazilian authorities (varies by type)",
+      "Work authorization letter from Brazilian Ministry of Labor (for VITEM V)",
       "Proof of financial means",
       "Health certificate",
-      "Yellow fever vaccination",
-      "Federal Police registration upon arrival"
+      "Yellow fever vaccination certificate (required if traveling from/through certain countries)",
     ],
     common_pitfalls: [
-      "Not obtaining work authorization before applying for visa",
-      "Insufficient investment amount documented",
-      "Document apostille requirements not understood",
-      "Not registering with Federal Police within 90 days",
-      "Missing yellow fever vaccination",
-      "Lengthy processing times not anticipated"
-    ]
+      "Applying for a work visa before obtaining Ministry of Labor authorization — the authorization must come first",
+      "Insufficient investment amount documented for VITEM II — minimum varies by nationality and investment type",
+      "Not understanding apostille requirements — Brazilian authorities require apostilled documents",
+      "Not registering with the Federal Police at the nearest regional office within 90 days of arrival",
+      "Missing yellow fever vaccination documentation if arriving from or through affected countries",
+      "Significantly underestimating processing times — Brazilian consulates and internal processes are typically slow",
+    ],
   },
   {
     destination_slug: "argentina",
-    overview: "Argentina offers relatively accessible temporary residence that can lead to permanent residence. Various categories exist including rentista, pensioner, and work. Consult Dirección Nacional de Migraciones.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Argentina offers relatively accessible Temporary Residence leading to Permanent Residence after 2 years (3 years for most non-Mercosur citizens). The Rentista and Pensioner categories require provable regular income. The DNI (national identity document for residents) must be applied for promptly after residence is approved. Verify requirements with the Dirección Nacional de Migraciones (DNM) at migraciones.gob.ar.",
     common_pathways: [
-      "Temporary Residence (Rentista - passive income)",
-      "Temporary Residence (Pensioner)",
-      "Work Visa",
+      "Temporary Residence — Rentista: requires provable passive income meeting the monthly threshold",
+      "Temporary Residence — Pensioner: verified pension income from abroad",
+      "Temporary Residence — Work: employment contract with Argentine employer",
+      "Temporary Residence — Investor",
       "Student Visa",
-      "Investment Visa",
-      "Family reunification (straightforward for Mercosur citizens)"
+      "Mercosur/Mercosur-associated state citizens: simplified and faster process",
+      "Permanent Residence — after 2–3 years of Temporary Residence",
     ],
     typical_documents: [
       "Valid passport",
       "Birth certificate (apostilled)",
-      "Criminal record (apostilled)",
-      "Proof of income or pension",
+      "Criminal record from home country and countries of residence in the last 3 years (apostilled)",
+      "Proof of income or pension (bank statements, pension letters, etc.)",
       "Passport photographs",
       "Application fees",
-      "DNI application upon approval"
     ],
     common_pitfalls: [
-      "Not apostilling documents before entry",
-      "Insufficient proof of passive income or pension",
-      "Documents older than 3 months not accepted",
-      "Not maintaining required income level for renewals",
-      "Missing DNI appointment timing",
-      "Not understanding that temporary residence must be maintained for permanent residence path"
-    ]
+      "Not apostilling documents before arriving in Argentina — unverified documents are not accepted",
+      "Documents older than 3 months are not accepted by DNM",
+      "Insufficient proof of passive income or pension to meet the monthly threshold (amounts change — verify with DNM)",
+      "Not applying for the DNI (national ID for residents) promptly after residence approval",
+      "Not maintaining the required monthly income level for renewals",
+      "Not understanding that 2–3 years of continuous Temporary Residence is required before applying for Permanent Residence",
+    ],
   },
   {
     destination_slug: "south-africa",
-    overview: "South Africa offers various visa types including critical skills work visas, business visas, and retirement visas. The system can be bureaucratic. Consult the Department of Home Affairs for requirements.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "South Africa's immigration system is managed by the Department of Home Affairs (DHA). The Critical Skills Work Visa is the primary route for skilled migrants and requires the applicant's occupation to appear on the current Critical Skills List. SAQA verification of qualifications is required and can take several months. Consult the DHA at dha.gov.za for requirements.",
     common_pathways: [
-      "Critical Skills Work Visa",
-      "General Work Visa",
-      "Business Visa",
-      "Retired Person's Visa",
+      "Critical Skills Work Visa — occupation must be on the current Critical Skills List",
+      "General Work Visa (requires employer to prove no South African can fill the role)",
+      "Business Visa (minimum investment thresholds apply)",
+      "Retired Person's Visa (minimum provable pension/assets)",
       "Study Visa",
-      "Relative's Visa"
+      "Relatives Visa (for family members of South African citizens or permanent residents)",
     ],
     typical_documents: [
       "Valid passport",
-      "Completed visa application (BI-1738)",
-      "Police clearance certificates",
-      "Medical certificate and radiological report",
-      "Proof of medical coverage",
-      "Qualification certificates (verified)",
-      "Financial documents",
-      "Yellow fever certificate if applicable"
+      "Completed visa application form (BI-1738 or successor form)",
+      "Police clearance certificates from all countries where resided 12+ months since age 18",
+      "Medical certificate and radiological (chest X-ray) report from a DHA-approved provider",
+      "Proof of medical aid/health insurance coverage in South Africa",
+      "SAQA evaluation of qualifications (for Critical Skills visa)",
+      "Financial documents meeting the visa-specific threshold",
+      "Yellow fever certificate if applicable",
     ],
     common_pitfalls: [
-      "Critical Skills List frequently updated",
-      "SAQA verification of qualifications required and time-consuming",
-      "Inadequate proof of financial means",
-      "Missing medical and radiological reports from approved providers",
-      "Not applying for correct visa category",
-      "Lengthy processing times and administrative delays"
-    ]
+      "Occupation not on the current Critical Skills List — the list is reviewed and updated periodically; verify before applying",
+      "SAQA verification of qualifications is mandatory and can take several months — start this process early",
+      "Not obtaining medical and radiological reports from a DHA-approved provider — reports from non-approved providers are rejected",
+      "Applying for the wrong visa category — critical skills, general work, and business visas have significantly different requirements",
+      "Significant administrative delays at the DHA — build extensive buffer time into your plans",
+      "Insufficient proof of financial means for the Business or Retired Person's visa",
+    ],
   },
   {
     destination_slug: "mauritius",
-    overview: "Mauritius offers occupation permits for investors, professionals, and self-employed, as well as a premium visa for remote workers. The process is relatively streamlined. Consult the Economic Development Board.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Mauritius offers Occupation Permits for professionals, investors, and self-employed individuals, as well as a Premium Travel Visa for remote workers and a Retired Non-Citizen Permit. The Economic Development Board (EDB) manages Occupation Permits, which are streamlined compared to many other countries. Verify requirements at edbmauritius.org.",
     common_pathways: [
-      "Occupation Permit (Professional)",
-      "Occupation Permit (Investor)",
-      "Occupation Permit (Self-Employed)",
-      "Premium Travel Visa (for remote workers)",
-      "Retired Non-Citizen Permit",
-      "Residence Permit through property purchase"
+      "Occupation Permit — Professional (employer-sponsored, minimum salary thresholds apply)",
+      "Occupation Permit — Investor (minimum business turnover targets)",
+      "Occupation Permit — Self-Employed (minimum annual income targets)",
+      "Premium Travel Visa — 1-year renewable for remote workers employed outside Mauritius",
+      "Retired Non-Citizen Permit — minimum USD 1,500/month transferred to Mauritius",
+      "Residence Permit through property purchase (minimum USD 375,000)",
     ],
     typical_documents: [
       "Valid passport",
-      "Application form",
+      "Application form (via EDB portal)",
       "Passport photographs",
       "Police clearance certificate",
-      "Proof of qualifications or business plan",
-      "Financial statements",
-      "Health insurance",
-      "Proof of accommodation"
+      "Proof of qualifications or detailed business plan",
+      "Financial statements and proof of investment or income",
+      "Health insurance meeting the permit type's requirements",
+      "Proof of accommodation",
     ],
     common_pitfalls: [
-      "Minimum investment or salary thresholds not met",
-      "Insufficient business plan for self-employed category",
-      "Not understanding that occupation permit doesn't automatically grant permanent residence",
-      "Health insurance requirements vary by permit type",
-      "Missing annual report requirements for permit renewal",
-      "Not registering with local authorities within required timeframe"
-    ]
+      "Minimum salary/investment thresholds not met — verify current EDB figures as they are subject to change",
+      "Insufficient or generic business plan for Investor or Self-Employed Occupation Permits",
+      "Not understanding that the Occupation Permit does not automatically lead to Permanent Residence — a separate application is required after a qualifying period",
+      "Health insurance coverage not meeting the requirements for the specific permit type",
+      "Missing annual revenue reporting requirements required for Occupation Permit renewal",
+      "Not registering with local authorities within the required timeframe after arrival",
+    ],
   },
   {
     destination_slug: "seychelles",
-    overview: "Seychelles offers the Seychelles Permanent Residence Certificate and various other permits for work and business. Tourism is the main industry. Consult the Department of Immigration.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Seychelles is a small island nation with a limited labor market concentrated in tourism and hospitality. The Gainful Occupation Permit (GOP) requires employers to demonstrate no local candidate is available. The Permanent Residence Certificate requires substantial property investment. Official information from the Seychelles Department of Immigration is limited — consult directly with the department or a local attorney.",
     common_pathways: [
-      "Gainful Occupation Permit (GOP) for employment",
+      "Gainful Occupation Permit (GOP) for employment (employer must prove no local available)",
       "Self-Employment Permit",
-      "Permanent Residence Certificate",
-      "Cable and Wireless Work Permit",
-      "Investor permit"
+      "Permanent Residence Certificate (substantial property purchase required)",
+      "Investor Permit",
     ],
     typical_documents: [
       "Valid passport",
@@ -837,73 +975,78 @@ export const starterCountryGuides: StarterCountryGuide[] = [
       "Medical certificate",
       "Proof of qualifications or business",
       "Financial documentation",
-      "Employment contract or business plan"
+      "Employment contract or business plan",
     ],
     common_pitfalls: [
-      "Limited employment opportunities outside tourism/hospitality",
-      "High cost of living not anticipated",
-      "GOP requires employer to demonstrate no local candidate available",
-      "Limited public information compared to other destinations",
-      "Small market for business ventures",
-      "Property purchase requirements for residence certificate are substantial"
-    ]
+      "Very limited employment opportunities outside tourism, hospitality, and fishing — most professional sectors are small",
+      "High cost of living in Seychelles relative to the local salary scale",
+      "GOP requires employer to demonstrate no suitable local candidate is available before a permit is considered",
+      "Limited publicly available information in English — official guidance can be difficult to find",
+      "Small market size makes business ventures challenging — thorough market research is essential",
+      "Permanent Residence Certificate requirements include substantial property purchase at prices well above many buyers' expectations",
+    ],
   },
   {
     destination_slug: "egypt",
-    overview: "Egypt offers work permits, student visas, and residence visas. The process often requires local sponsorship. Tourist visas are easy but not suitable for long-term stays. Consult Egyptian diplomatic missions.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Egypt's immigration processes for long-term residence require local sponsorship for most visa types, and Ministry of Manpower approval must precede a work visa. Bureaucratic processes can be complex and lengthy. Registration with local police is required after arrival. Consult Egyptian diplomatic missions and the Ministry of Manpower at manpower.gov.eg.",
     common_pathways: [
-      "Work Visa and Residence",
+      "Work Visa and Residence (Ministry of Manpower authorization required first)",
       "Student Visa",
       "Investor Residence",
       "Family Residence",
-      "Long-term tourist visa (limited)"
     ],
     typical_documents: [
-      "Valid passport (6+ months validity)",
+      "Valid passport with 6+ months validity",
       "Visa application forms",
       "Passport photographs",
-      "Work permit from Ministry of Manpower (for work)",
+      "Work permit from Ministry of Manpower (required before work visa application)",
       "Security clearance",
       "Health certificate",
-      "Residence visa application",
-      "Registration with local police"
+      "Residence visa application (submitted in-country)",
+      "Registration with local police station within the required timeframe",
     ],
     common_pitfalls: [
-      "Work permits require Ministry of Manpower approval before visa",
-      "Complex bureaucratic processes",
-      "Local sponsor often required",
-      "Not registering with local police within timeframe",
-      "Tourist visa cannot be converted to residence visa easily",
-      "Processing times can be lengthy and unpredictable"
-    ]
+      "Attempting to apply for a work visa without first obtaining Ministry of Manpower approval — the work permit comes first",
+      "Complex and multi-step bureaucratic processes — using a local attorney or employer HR support is strongly recommended",
+      "Local sponsor required for most visa types — independent applicants face significant difficulty",
+      "Not registering with local police within the required timeframe after entry",
+      "Tourist visa cannot easily be converted to a residence visa from within Egypt",
+      "Processing times are unpredictable and can extend significantly beyond initial estimates",
+    ],
   },
   {
     destination_slug: "morocco",
-    overview: "Morocco offers work permits, student visas, and residence cards. French or Arabic language skills are beneficial. The process can involve multiple government offices. Consult Moroccan diplomatic missions.",
+    // No major structural changes to note for 2026
+    last_verified: "2026-03-30",
+    overview:
+      "Morocco's work permit system requires employers to demonstrate no Moroccan national is available for the role. Residence cards (Carte de Séjour) are applied for in-country after arrival and are distinct from the entry visa. French or Arabic language skills are strongly beneficial as most official processes are conducted in these languages. Consult Moroccan diplomatic missions for current requirements.",
     common_pathways: [
-      "Work permit and residence card",
+      "Work permit and residence (employer-sponsored, ANAPEC labor market test required)",
       "Student visa",
-      "Residence card for retirees",
-      "Business visa",
-      "Family reunification"
+      "Carte de Séjour for retirees and passive income holders",
+      "Business visa for investors",
+      "Family reunification",
     ],
     typical_documents: [
       "Valid passport",
-      "Visa application",
+      "Visa application (submitted at Moroccan consulate in country of legal residence)",
       "Passport photographs",
-      "Employment contract (for work)",
+      "Employment contract (for work visa)",
       "Criminal record",
       "Medical certificate",
       "Proof of accommodation",
-      "Residence card application in Morocco"
+      "Carte de Séjour application submitted in Morocco after arrival",
     ],
     common_pitfalls: [
-      "Visa application must often be in country of residence",
-      "Work permits require employer to prove no Moroccan available",
-      "Residence card process separate from visa and requires in-country application",
-      "Limited information in English",
-      "Multiple government offices involved",
-      "Not understanding difference between residence visa and residence card"
-    ]
+      "Visa application must be submitted at a consulate in your country of legal residence — not your country of nationality if different",
+      "Work permits require employer to demonstrate via ANAPEC that no Moroccan national can fill the role — this is a genuine labor market test, not a formality",
+      "The Carte de Séjour (residence card) is a separate in-country process from the entry visa — both are required for legal long-term residence",
+      "Official processes are largely conducted in French or Arabic — limited English-language guidance is available from government sources",
+      "Multiple government offices are often involved — bureaucratic coordination between the ONMT, Ministry of Interior, and ANAPEC can cause delays",
+      "Confusing the entry visa with the Carte de Séjour — the entry visa allows entry; the Carte de Séjour formalizes the right to reside",
+    ],
   },
 ];
