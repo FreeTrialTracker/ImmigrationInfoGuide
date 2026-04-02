@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getBlogPostBySlug, getRelatedBlogPosts, getAllBlogPosts, formatBlogDate } from '@/lib/blogData';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
-import { Calendar, Clock, User, ChevronRight, BookOpen, Calculator, Compass, FileText, ChartBar as BarChart2, Globe } from 'lucide-react';
+import { Calendar, Clock, User, ChevronRight, BookOpen, Calculator, Compass, FileText, ChartBar as BarChart2, Globe, ArrowRight } from 'lucide-react';
 import type { FaqItem, BlogPostSummary } from '@/lib/blogTypes';
 import { buildArticleSchema, buildBreadcrumbSchema, buildFaqSchema } from '@/lib/schemaBuilders';
 import BlogTableOfContents from '@/components/blog/BlogTableOfContents';
@@ -13,6 +13,7 @@ import BlogArticleContent from '@/components/blog/BlogArticleContent';
 import { getBlogRelatedLinks } from '@/lib/seo/relatedLinks';
 import RelatedLinksSection from '@/components/seo/RelatedLinksSection';
 import BackNavigation from '@/components/BackNavigation';
+import { detectArticleType, getArticleIntro, getArticleConclusion } from '@/lib/blog/articleEnhancements';
 
 type Props = {
   params: { slug: string };
@@ -91,6 +92,13 @@ export default async function BlogArticlePage({ params }: Props) {
       ? buildFaqSchema(post.faq.map((item: FaqItem) => ({ question: item.question, answer: item.answer })))
       : null;
 
+  const articleType = detectArticleType(post.slug, post.title, post.category, post.tags || []);
+  const intro = getArticleIntro(post.slug, post.title, post.excerpt, articleType);
+  const conclusion = getArticleConclusion(post.slug, post.title, articleType);
+
+  const wordCountEstimate = post.content.reduce((acc, s) => acc + s.body.split(/\s+/).length, 0);
+  const readingTime = post.reading_time_minutes || Math.max(3, Math.round(wordCountEstimate / 200));
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
@@ -101,7 +109,7 @@ export default async function BlogArticlePage({ params }: Props) {
 
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b border-gray-200">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
             <BackNavigation fallbackUrl="/blog" label="Back to Blog" />
             <SEOBreadcrumbs
               items={[
@@ -114,30 +122,42 @@ export default async function BlogArticlePage({ params }: Props) {
         </div>
 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
-          <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10 xl:gap-14">
+          <div className="lg:grid lg:grid-cols-[1fr_272px] lg:gap-12 xl:gap-16">
             <article className="min-w-0">
-              <header className="mb-8">
-                <div className="mb-4">
-                  <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary">
+
+              <header className="mb-7">
+                <div className="mb-3">
+                  <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary tracking-wide uppercase">
                     {post.category}
                   </span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-5">
                   {post.title}
                 </h1>
-                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 pb-5 border-b border-gray-200">
+
+                <p className="text-lg text-gray-600 leading-relaxed mb-5 max-w-prose">
+                  {intro}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-500 pb-5 border-b border-gray-200">
                   <span className="flex items-center gap-1.5">
                     <User className="h-4 w-4 text-gray-400" />
                     <span className="font-medium text-gray-700">{post.author}</span>
-                    <span className="text-gray-400 hidden sm:inline">· {post.author_title}</span>
+                    <span className="text-gray-400 hidden sm:inline">&middot; {post.author_title}</span>
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Calendar className="h-4 w-4 text-gray-400" />
                     {formatBlogDate(post.published_at)}
                   </span>
+                  {post.updated_at && post.updated_at !== post.published_at && (
+                    <span className="flex items-center gap-1.5 text-xs">
+                      <span className="text-gray-400">Updated</span>
+                      {formatBlogDate(post.updated_at)}
+                    </span>
+                  )}
                   <span className="flex items-center gap-1.5">
                     <Clock className="h-4 w-4 text-gray-400" />
-                    {post.reading_time_minutes} min read
+                    {readingTime} min read
                   </span>
                 </div>
               </header>
@@ -161,6 +181,27 @@ export default async function BlogArticlePage({ params }: Props) {
 
               <BlogArticleContent content={post.content} />
 
+              {conclusion && (
+                <section className="mt-2 mb-10 bg-gray-50 rounded-xl border border-gray-200 p-6">
+                  <h2 className="text-xl font-bold text-gray-900 mb-3">Summary</h2>
+                  <p className="text-gray-600 leading-relaxed">{conclusion}</p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <Link
+                      href="/path-finder"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline"
+                    >
+                      Find your immigration pathway <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <Link
+                      href="/immigration-cost-calculator"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:underline"
+                    >
+                      Estimate your costs <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </section>
+              )}
+
               {post.faq && post.faq.length > 0 && <BlogFaqSection faq={post.faq} />}
 
               <ArticleToolsPanel />
@@ -174,34 +215,49 @@ export default async function BlogArticlePage({ params }: Props) {
             </article>
 
             <aside className="hidden lg:block">
-              <div className="sticky top-24 space-y-6">
+              <div className="sticky top-24 space-y-5">
                 <BlogTableOfContents toc={post.toc} />
-                <div className="bg-brand-primary/5 rounded-xl border border-brand-primary/20 p-5">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-2">Plan Your Move</h3>
-                  <p className="text-xs text-gray-600 mb-4 leading-relaxed">
-                    Use our free tools to find the right immigration pathway for your situation.
-                  </p>
-                  <Link
-                    href="/path-finder"
-                    className="flex items-center justify-between w-full bg-brand-primary text-white text-sm font-medium py-2.5 px-4 rounded-lg hover:bg-brand-primary-hover transition-colors"
-                  >
-                    <span>Start Path Finder</span>
-                    <ChevronRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href="/immigration-cost-calculator"
-                    className="flex items-center justify-between w-full mt-2 border border-gray-200 bg-white text-gray-700 text-sm font-medium py-2.5 px-4 rounded-lg hover:border-brand-primary/40 hover:text-brand-primary transition-colors"
-                  >
-                    <span>Cost Calculator</span>
-                    <ChevronRight className="h-4 w-4" />
-                  </Link>
-                </div>
+                <SidebarToolsCard />
               </div>
             </aside>
           </div>
         </div>
       </div>
     </>
+  );
+}
+
+function SidebarToolsCard() {
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 p-5">
+      <h3 className="text-sm font-bold text-gray-900 mb-1">Plan Your Move</h3>
+      <p className="text-xs text-gray-500 mb-4 leading-relaxed">
+        Free tools to find the right pathway, estimate costs, and prepare documents.
+      </p>
+      <div className="space-y-2">
+        <Link
+          href="/path-finder"
+          className="flex items-center justify-between w-full bg-brand-primary text-white text-sm font-medium py-2.5 px-4 rounded-lg hover:bg-brand-primary-hover transition-colors"
+        >
+          <span>Start Path Finder</span>
+          <ChevronRight className="h-4 w-4" />
+        </Link>
+        <Link
+          href="/immigration-cost-calculator"
+          className="flex items-center justify-between w-full border border-gray-200 bg-white text-gray-700 text-sm font-medium py-2.5 px-4 rounded-lg hover:border-brand-primary/40 hover:text-brand-primary transition-colors"
+        >
+          <span>Cost Calculator</span>
+          <ChevronRight className="h-4 w-4" />
+        </Link>
+        <Link
+          href="/immigration-guides"
+          className="flex items-center justify-between w-full border border-gray-200 bg-white text-gray-700 text-sm font-medium py-2.5 px-4 rounded-lg hover:border-brand-primary/40 hover:text-brand-primary transition-colors"
+        >
+          <span>Country Guides</span>
+          <ChevronRight className="h-4 w-4" />
+        </Link>
+      </div>
+    </div>
   );
 }
 
@@ -217,7 +273,8 @@ function ArticleToolsPanel() {
 
   return (
     <section className="mt-10 pt-8 border-t border-gray-200">
-      <h2 className="text-lg font-bold text-gray-900 mb-4">Free Immigration Planning Tools</h2>
+      <h2 className="text-lg font-bold text-gray-900 mb-1">Free Immigration Planning Tools</h2>
+      <p className="text-sm text-gray-500 mb-4">Use these tools to research, compare, and plan your immigration journey.</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {tools.map(({ href, icon: Icon, label, desc }) => (
           <Link
